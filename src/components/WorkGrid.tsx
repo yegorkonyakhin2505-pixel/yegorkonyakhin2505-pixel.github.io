@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -33,26 +33,55 @@ const INFLUENCERS: Case[] = [
 ];
 
 function Tile({ c, i }: { c: Case; i: number }) {
+  const vid = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  // Touch devices have no hover: play only while the tile is mostly on screen
+  useEffect(() => {
+    const v = vid.current;
+    if (!v || window.matchMedia("(pointer: fine)").matches) return;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.intersectionRatio >= 0.6) {
+          v.play().catch(() => {});
+          setPlaying(true);
+        } else {
+          v.pause();
+          setPlaying(false);
+        }
+      },
+      { threshold: [0, 0.6] }
+    );
+    io.observe(v);
+    return () => io.disconnect();
+  }, []);
+
+  const play = () => {
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    vid.current?.play().catch(() => {});
+    setPlaying(true);
+  };
+  const pause = () => {
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    vid.current?.pause();
+    setPlaying(false);
+  };
+
   return (
-    <div className="work-card group">
+    <div className="work-card group" onMouseEnter={play} onMouseLeave={pause}>
       <div className="relative aspect-[9/16] overflow-hidden rounded-xl bg-card">
         <div
-          className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+          className={`absolute inset-0 transition-all duration-500 ease-out group-hover:scale-[1.04] ${
+            playing ? "" : "brightness-[.85]"
+          }`}
           style={{ background: c.art }}
         >
-          {/* real footage drops in automatically: /media/work/<slug>.mp4 (muted loop), else .jpg */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`/media/work/${c.slug}.jpg`}
-            alt=""
-            loading="lazy"
-            className="h-full w-full object-cover"
-            onError={(e) => ((e.target as HTMLImageElement).style.display = "none")}
-          />
+          {/* still poster by default; video plays on hover (desktop) / in view (mobile) */}
           <video
-            className="absolute inset-0 h-full w-full object-cover"
+            ref={vid}
+            className="h-full w-full object-cover"
             src={`/media/work/${c.slug}.mp4`}
-            autoPlay
+            poster={`/media/work/${c.slug}-poster.jpg`}
             muted
             loop
             playsInline
@@ -60,6 +89,13 @@ function Tile({ c, i }: { c: Case; i: number }) {
             onError={(e) => ((e.target as HTMLVideoElement).style.display = "none")}
           />
         </div>
+        <span
+          className={`absolute bottom-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-black/50 text-[10px] text-white/90 backdrop-blur-sm transition-opacity duration-300 ${
+            playing ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          ▶
+        </span>
         <span className="display absolute bottom-2 left-3 text-3xl text-white/15">
           {String(i + 1).padStart(2, "0")}
         </span>
