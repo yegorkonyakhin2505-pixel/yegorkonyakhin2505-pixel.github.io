@@ -112,7 +112,8 @@ export default function WorkGrid() {
       <h2 className="work-heading display mb-10 text-5xl md:mb-14 md:text-[4.5vw]">
         For <span className="text-accent">businesses</span>
       </h2>
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-5 md:gap-4">
+      {/* 10 tiles → always two even rows of 5 on desktop */}
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
         {BUSINESSES.map((c, i) => (
           <Tile key={c.slug} c={c} i={i} />
         ))}
@@ -121,7 +122,8 @@ export default function WorkGrid() {
       <h2 className="work-heading display mb-10 mt-24 text-5xl md:mb-14 md:mt-32 md:text-[4.5vw]">
         For <span className="text-accent">influencers</span>
       </h2>
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-5 md:gap-4">
+      {/* 6 tiles → one complete row on desktop, no orphans */}
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-6 md:gap-4">
         {INFLUENCERS.map((c, i) => (
           <Tile key={c.slug} c={c} i={i} />
         ))}
