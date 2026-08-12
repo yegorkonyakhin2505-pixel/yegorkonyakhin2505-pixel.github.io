@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
+/* ---------- Amplify Media brand theme: Noir (matte black + purple) ---------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0c0b10;
+  --fg: #efedf5;
+  --muted: #8f8c9c;
+  --accent: #9d6bff;
+  --accent-fg: #0c0b10;
+  --card: #14121b;
+  --line: rgba(239, 237, 245, 0.14);
+  --aurora-1: 0.24;
+  --aurora-2: 0.08;
+  --aurora-3: 0.26;
+  --video-op: 0.5;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --font-display: var(--font-archivo);
+  --font-sans: var(--font-inter);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+/* Big agency headline style */
+.display {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-weight: 800;
+  font-stretch: 120%;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+
+/* Hollow text that fills on hover (contact section) */
+.outline-text {
+  -webkit-text-stroke: 2px var(--fg);
+  color: transparent;
+  transition: color 0.35s ease, -webkit-text-stroke-color 0.35s ease;
+}
+.outline-text:hover {
+  color: var(--accent);
+  -webkit-text-stroke-color: var(--accent);
+}
+
+/* Film grain overlay — static, GPU-cheap */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Marquee — transform-only, two identical halves */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
 }
