@@ -20,6 +20,7 @@ const BUSINESSES: Case[] = [
   { title: "Esports Team", slug: "esports", tag: "Montages & Socials", stat: "1.8M views", art: "linear-gradient(200deg, color-mix(in oklab, var(--accent) 65%, #000) 0%, #08080a 80%)" },
   { title: "Karaoke Lounge", slug: "karaoke", tag: "Promo & Reels", stat: "+95% footfall", art: "radial-gradient(circle at 20% 30%, color-mix(in oklab, var(--accent) 60%, #fff) 0%, #0c0c0f 65%)" },
   { title: "Real Estate", slug: "real-estate", tag: "Social Growth", stat: "+180% engagement", art: "linear-gradient(150deg, color-mix(in oklab, var(--accent) 75%, #000) 0%, #101012 70%)" },
+  { title: "Product Ads", slug: "laptop", tag: "Tech & Promo Films", stat: "4.1x ROAS", art: "linear-gradient(260deg, color-mix(in oklab, var(--accent) 60%, #000) 0%, #0b0b0d 75%)" },
 ];
 
 const INFLUENCERS: Case[] = [
@@ -111,7 +112,7 @@ export default function WorkGrid() {
       <h2 className="work-heading display mb-10 text-5xl md:mb-14 md:text-[4.5vw]">
         For <span className="text-accent">businesses</span>
       </h2>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-5 md:gap-4">
         {BUSINESSES.map((c, i) => (
           <Tile key={c.slug} c={c} i={i} />
         ))}
@@ -120,7 +121,7 @@ export default function WorkGrid() {
       <h2 className="work-heading display mb-10 mt-24 text-5xl md:mb-14 md:mt-32 md:text-[4.5vw]">
         For <span className="text-accent">influencers</span>
       </h2>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-5 md:gap-4">
         {INFLUENCERS.map((c, i) => (
           <Tile key={c.slug} c={c} i={i} />
         ))}
