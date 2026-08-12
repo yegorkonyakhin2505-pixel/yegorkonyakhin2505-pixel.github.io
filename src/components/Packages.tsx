@@ -10,10 +10,10 @@ const TIERS = [
   {
     name: "Starter",
     tagline: "Get consistent",
-    price: "AED 4,000",
+    price: "AED 5,000",
     popular: false,
     features: [
-      "3 videos every week",
+      "2 videos every week",
       "Filmed by our team",
       "Scripts written for every video",
       "Professionally edited",
@@ -26,7 +26,7 @@ const TIERS = [
     price: "AED 8,000",
     popular: true,
     features: [
-      "4 videos every week",
+      "3 videos every week",
       "Filmed, scripted & edited",
       "Access to AI-generated content",
       "End-of-month analytics report",
@@ -35,10 +35,10 @@ const TIERS = [
   {
     name: "Scale",
     tagline: "Own your market",
-    price: "AED 12,000",
+    price: "AED 17,000",
     popular: false,
     features: [
-      "5 videos every week",
+      "6 videos every week",
       "Everything in Starter & Growth",
       "In-depth social media analysis",
       "Niche & competitor analysis",
