@@ -29,6 +29,8 @@ const TIERS = [
       "3 videos every week",
       "Filmed, scripted & edited",
       "Access to AI-generated content",
+      "Uploading & scheduling handled",
+      "Monthly strategy call",
       "End-of-month analytics report",
     ],
   },
