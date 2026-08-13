@@ -88,7 +88,7 @@ export default function Packages() {
         </p>
       </div>
 
-      <div className="pkg-grid grid gap-6 lg:grid-cols-3">
+      <div className="pkg-grid grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {TIERS.map((t) => (
           <div
             key={t.name}
@@ -127,23 +127,37 @@ export default function Packages() {
             </a>
           </div>
         ))}
-      </div>
 
-      {/* website development — custom pricing */}
-      <a
-        href="#contact"
-        className="group mt-6 flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-line bg-card/50 px-8 py-6 transition-colors hover:border-accent md:px-10"
-      >
-        <div>
-          <h3 className="display text-2xl md:text-3xl">Website & Platform Development</h3>
-          <p className="mt-1 text-sm text-muted">
-            Custom builds like this one — site, company email, SEO & AEO, full handover. Enquire for a quote.
+        {/* website & platform development — full card, custom pricing */}
+        <div className="pkg-card relative flex flex-col rounded-3xl border border-line bg-card/50 p-8 transition-colors md:p-10">
+          <p className="text-sm uppercase tracking-[0.25em] text-muted">Built & handed over</p>
+          <h3 className="display mt-3 text-4xl">Website</h3>
+          <p className="mt-6 text-3xl font-semibold">
+            Custom
+            <span className="ml-1 text-base font-normal text-muted">/ per project</span>
           </p>
+          <ul className="mt-8 flex-1 space-y-3">
+            {[
+              "Website & platform development",
+              "Built like the site you're on",
+              "Company email setup",
+              "SEO & AEO",
+              "Full handover — it's yours",
+            ].map((f) => (
+              <li key={f} className="flex items-start gap-3 text-base">
+                <span className="mt-0.5 text-accent">✦</span>
+                {f}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="#contact"
+            className="mt-10 rounded-full border border-line px-6 py-3.5 text-center text-sm font-semibold uppercase tracking-wider transition-colors hover:bg-accent hover:text-accent-fg hover:border-transparent"
+          >
+            Enquire
+          </a>
         </div>
-        <span className="rounded-full border border-line px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-colors group-hover:bg-accent group-hover:text-accent-fg group-hover:border-transparent">
-          Enquire
-        </span>
-      </a>
+      </div>
     </section>
   );
 }
