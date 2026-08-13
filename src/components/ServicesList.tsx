@@ -41,11 +41,11 @@ const SERVICES = [
   },
   {
     num: "05",
-    title: "Website Development",
-    desc: "Fast, animated sites that close the deal",
+    title: "Website & Platform Development",
+    desc: "Fast, animated sites — built, set up and handed over",
     about:
-      "Websites like the one you're looking at: fast, animated and built to turn visitors into enquiries. Designed, developed and launched for your brand.",
-    includes: ["Custom design & build", "Smooth animations", "Mobile-first & fast loading", "SEO essentials", "Hosting setup & maintenance"],
+      "Websites like the one you're looking at: fast, animated and built to turn visitors into enquiries. We build it, set up your business platforms around it, and hand everything over to you — fully yours.",
+    includes: ["Website development", "Company email setup", "SEO & AEO", "Full handover"],
   },
 ];
 

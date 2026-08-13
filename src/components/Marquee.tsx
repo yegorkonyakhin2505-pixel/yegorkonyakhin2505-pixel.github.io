@@ -5,7 +5,7 @@ const ITEMS = [
   "Social Media Management",
   "Posting & Scheduling",
   "Monthly Analytics",
-  "Website Development",
+  "Website & Platform Development",
 ];
 
 export default function Marquee() {

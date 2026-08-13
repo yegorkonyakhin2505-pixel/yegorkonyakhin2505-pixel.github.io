@@ -133,9 +133,9 @@ export default function Packages() {
         className="group mt-6 flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-line bg-card/50 px-8 py-6 transition-colors hover:border-accent md:px-10"
       >
         <div>
-          <h3 className="display text-2xl md:text-3xl">Website Development</h3>
+          <h3 className="display text-2xl md:text-3xl">Website & Platform Development</h3>
           <p className="mt-1 text-sm text-muted">
-            Custom builds like this one — pricing depends on the project. Get in touch for a quote.
+            Custom builds like this one — site, company email, SEO & AEO, full handover. Enquire for a quote.
           </p>
         </div>
         <span className="rounded-full border border-line px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-colors group-hover:bg-accent group-hover:text-accent-fg group-hover:border-transparent">
