@@ -128,18 +128,19 @@ export default function Packages() {
           </div>
         ))}
 
-        {/* website & platform development — full card, custom pricing */}
+        {/* AI platforms — full card, custom pricing */}
         <div className="pkg-card relative flex flex-col rounded-3xl border border-line bg-card/50 p-8 transition-colors md:p-10">
-          <p className="text-sm uppercase tracking-[0.25em] text-muted">Built & handed over</p>
-          <h3 className="display mt-3 text-4xl">Website</h3>
+          <p className="text-sm uppercase tracking-[0.25em] text-muted">Built & integrated</p>
+          <h3 className="display mt-3 text-4xl">AI Platforms</h3>
           <p className="mt-6 text-3xl font-semibold">
             Custom
             <span className="ml-1 text-base font-normal text-muted">/ per project</span>
           </p>
           <ul className="mt-8 flex-1 space-y-3">
             {[
-              "Website & platform development",
-              "Built like the site you're on",
+              "AI platform development & integration",
+              "Custom AI agents & automations",
+              "Website development",
               "Company email setup",
               "SEO & AEO",
               "Full handover — it's yours",

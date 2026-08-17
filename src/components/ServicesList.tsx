@@ -41,11 +41,18 @@ const SERVICES = [
   },
   {
     num: "05",
-    title: "Website & Platform Development",
-    desc: "Fast, animated sites — built, set up and handed over",
+    title: "AI Platform Development & Integration",
+    desc: "AI systems, websites and automations — built and handed over",
     about:
-      "Websites like the one you're looking at: fast, animated and built to turn visitors into enquiries. We build it, set up your business platforms around it, and hand everything over to you — fully yours.",
-    includes: ["Website development", "Company email setup", "SEO & AEO", "Full handover"],
+      "We build AI into your business: custom platforms, agents and automations that save hours every week — plus fast, animated websites like the one you're on. Everything set up, integrated and handed over, fully yours.",
+    includes: [
+      "AI platform development & integration",
+      "Custom AI agents & automations",
+      "Website development",
+      "Company email setup",
+      "SEO & AEO",
+      "Full handover",
+    ],
   },
 ];
 
