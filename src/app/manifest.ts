@@ -4,9 +4,9 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Amplify Media",
+    name: "Amplify Marketing",
     short_name: "Amplify",
-    description: "Creative marketing agency — Dubai, UAE. We make brands impossible to ignore.",
+    description: "Digital marketing agency — Dubai, UAE. We make brands impossible to ignore.",
     start_url: "/",
     display: "standalone",
     background_color: "#0c0b10",

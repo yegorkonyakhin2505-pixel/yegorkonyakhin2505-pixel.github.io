@@ -17,9 +17,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Amplify Media — Creative Marketing Agency",
+  metadataBase: new URL("https://amplifymarketing.ae"),
+  title: "Amplify Marketing — Digital Marketing Agency, Dubai",
   description:
-    "We make brands impossible to ignore. Strategy, content and campaigns for the UAE market.",
+    "Amplify Marketing makes brands impossible to ignore. Strategy, content and campaigns for the UAE market.",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

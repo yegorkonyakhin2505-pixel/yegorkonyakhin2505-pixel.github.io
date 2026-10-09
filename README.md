@@ -1,3 +1,20 @@
+# Amplify Marketing — website
+
+Marketing site for Amplify Marketing (Dubai, UAE), live at <https://amplifymarketing.ae>. Built with [Next.js](https://nextjs.org) as a static export (`output: "export"`, builds to `out/`).
+
+## Deploy (Coolify / Docker)
+
+The root `Dockerfile` builds the static export with Node 22 and serves `out/` from `nginx:1.27-alpine` on port 80 (`nginx.conf`). Point Coolify at the repo with the Dockerfile build pack; no runtime environment variables are required.
+
+```bash
+docker build -t amplify-marketing .
+docker run -p 8080:80 amplify-marketing
+```
+
+The public contact email lives in one constant, `CONTACT_EMAIL`, at the top of `src/components/Contact.tsx`.
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

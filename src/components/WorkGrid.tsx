@@ -6,30 +6,30 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-type Case = { title: string; slug: string; tag: string; stat: string; art: string };
+type Case = { title: string; slug: string; tag: string; art: string };
 
 // Client names kept private — industry labels only, footage speaks for itself.
-// Stats are placeholders until Yegor supplies real numbers.
+// No performance stats shown: only real, client-approved numbers belong here.
 const BUSINESSES: Case[] = [
-  { title: "Barbershops", slug: "barbershop", tag: "Content & Reels", stat: "+120% bookings", art: "radial-gradient(circle at 70% 20%, color-mix(in oklab, var(--accent) 65%, #fff) 0%, #101012 65%)" },
-  { title: "BMW Car Club", slug: "bmw-club", tag: "Event Films & Socials", stat: "890k views", art: "linear-gradient(220deg, color-mix(in oklab, var(--accent) 55%, #000) 0%, #060607 80%)" },
-  { title: "Podcasts", slug: "podcast", tag: "Production & Clips", stat: "1.2M clip views", art: "radial-gradient(circle at 30% 80%, color-mix(in oklab, var(--accent) 70%, #000) 0%, #101012 70%)" },
-  { title: "Car Rental", slug: "car-rental", tag: "Promo & Socials", stat: "2.4x enquiries", art: "linear-gradient(150deg, color-mix(in oklab, var(--accent) 70%, #000) 0%, #101012 70%)" },
-  { title: "Clothing Brand", slug: "clothing", tag: "Campaign Content", stat: "310k views", art: "linear-gradient(320deg, color-mix(in oklab, var(--accent) 60%, #000) 0%, #0b0b0d 75%)" },
-  { title: "Nightlife & Clubs", slug: "nightclub", tag: "Event Coverage", stat: "sold-out nights", art: "radial-gradient(circle at 50% 10%, color-mix(in oklab, var(--accent) 55%, #fff) 0%, #0d0d10 70%)" },
-  { title: "Esports Team", slug: "esports", tag: "Montages & Socials", stat: "1.8M views", art: "linear-gradient(200deg, color-mix(in oklab, var(--accent) 65%, #000) 0%, #08080a 80%)" },
-  { title: "Karaoke Lounge", slug: "karaoke", tag: "Promo & Reels", stat: "+95% footfall", art: "radial-gradient(circle at 20% 30%, color-mix(in oklab, var(--accent) 60%, #fff) 0%, #0c0c0f 65%)" },
-  { title: "Real Estate", slug: "real-estate", tag: "Social Growth", stat: "+180% engagement", art: "linear-gradient(150deg, color-mix(in oklab, var(--accent) 75%, #000) 0%, #101012 70%)" },
-  { title: "Product Ads", slug: "laptop", tag: "Tech & Promo Films", stat: "4.1x ROAS", art: "linear-gradient(260deg, color-mix(in oklab, var(--accent) 60%, #000) 0%, #0b0b0d 75%)" },
+  { title: "Barbershops", slug: "barbershop", tag: "Content & Reels", art: "radial-gradient(circle at 70% 20%, color-mix(in oklab, var(--accent) 65%, #fff) 0%, #101012 65%)" },
+  { title: "BMW Car Club", slug: "bmw-club", tag: "Event Films & Socials", art: "linear-gradient(220deg, color-mix(in oklab, var(--accent) 55%, #000) 0%, #060607 80%)" },
+  { title: "Podcasts", slug: "podcast", tag: "Production & Clips", art: "radial-gradient(circle at 30% 80%, color-mix(in oklab, var(--accent) 70%, #000) 0%, #101012 70%)" },
+  { title: "Car Rental", slug: "car-rental", tag: "Promo & Socials", art: "linear-gradient(150deg, color-mix(in oklab, var(--accent) 70%, #000) 0%, #101012 70%)" },
+  { title: "Clothing Brand", slug: "clothing", tag: "Campaign Content", art: "linear-gradient(320deg, color-mix(in oklab, var(--accent) 60%, #000) 0%, #0b0b0d 75%)" },
+  { title: "Nightlife & Clubs", slug: "nightclub", tag: "Event Coverage", art: "radial-gradient(circle at 50% 10%, color-mix(in oklab, var(--accent) 55%, #fff) 0%, #0d0d10 70%)" },
+  { title: "Esports Team", slug: "esports", tag: "Montages & Socials", art: "linear-gradient(200deg, color-mix(in oklab, var(--accent) 65%, #000) 0%, #08080a 80%)" },
+  { title: "Karaoke Lounge", slug: "karaoke", tag: "Promo & Reels", art: "radial-gradient(circle at 20% 30%, color-mix(in oklab, var(--accent) 60%, #fff) 0%, #0c0c0f 65%)" },
+  { title: "Real Estate", slug: "real-estate", tag: "Social Growth", art: "linear-gradient(150deg, color-mix(in oklab, var(--accent) 75%, #000) 0%, #101012 70%)" },
+  { title: "Product Ads", slug: "laptop", tag: "Tech & Promo Films", art: "linear-gradient(260deg, color-mix(in oklab, var(--accent) 60%, #000) 0%, #0b0b0d 75%)" },
 ];
 
 const INFLUENCERS: Case[] = [
-  { title: "Lifestyle Creator", slug: "inf-lifestyle", tag: "Reels & Growth", stat: "+210k followers", art: "linear-gradient(140deg, color-mix(in oklab, var(--accent) 70%, #000) 0%, #0c0c0f 75%)" },
-  { title: "Gym & Fitness", slug: "inf-gym", tag: "Content System", stat: "4.8M reach", art: "radial-gradient(circle at 60% 30%, color-mix(in oklab, var(--accent) 60%, #fff) 0%, #0c0c0f 65%)" },
-  { title: "Cinematic Films", slug: "inf-cinematic", tag: "Signature Edits", stat: "2.4M views", art: "linear-gradient(230deg, color-mix(in oklab, var(--accent) 55%, #000) 0%, #08080a 80%)" },
-  { title: "Creator Montages", slug: "inf-montage", tag: "Fast-Cut Edits", stat: "+160% watch time", art: "radial-gradient(circle at 25% 75%, color-mix(in oklab, var(--accent) 65%, #000) 0%, #0c0c0f 70%)" },
-  { title: "Behind the Scenes", slug: "inf-backstage", tag: "Production Content", stat: "12 brand deals", art: "linear-gradient(300deg, color-mix(in oklab, var(--accent) 60%, #000) 0%, #0a0a0d 75%)" },
-  { title: "Gym Workouts", slug: "inf-workout", tag: "Training Content", stat: "+3.1M plays", art: "radial-gradient(circle at 75% 70%, color-mix(in oklab, var(--accent) 55%, #fff) 0%, #0b0b0e 68%)" },
+  { title: "Lifestyle Creator", slug: "inf-lifestyle", tag: "Reels & Growth", art: "linear-gradient(140deg, color-mix(in oklab, var(--accent) 70%, #000) 0%, #0c0c0f 75%)" },
+  { title: "Gym & Fitness", slug: "inf-gym", tag: "Content System", art: "radial-gradient(circle at 60% 30%, color-mix(in oklab, var(--accent) 60%, #fff) 0%, #0c0c0f 65%)" },
+  { title: "Cinematic Films", slug: "inf-cinematic", tag: "Signature Edits", art: "linear-gradient(230deg, color-mix(in oklab, var(--accent) 55%, #000) 0%, #08080a 80%)" },
+  { title: "Creator Montages", slug: "inf-montage", tag: "Fast-Cut Edits", art: "radial-gradient(circle at 25% 75%, color-mix(in oklab, var(--accent) 65%, #000) 0%, #0c0c0f 70%)" },
+  { title: "Behind the Scenes", slug: "inf-backstage", tag: "Production Content", art: "linear-gradient(300deg, color-mix(in oklab, var(--accent) 60%, #000) 0%, #0a0a0d 75%)" },
+  { title: "Gym Workouts", slug: "inf-workout", tag: "Training Content", art: "radial-gradient(circle at 75% 70%, color-mix(in oklab, var(--accent) 55%, #fff) 0%, #0b0b0e 68%)" },
 ];
 
 function Tile({ c, i }: { c: Case; i: number }) {
@@ -98,9 +98,6 @@ function Tile({ c, i }: { c: Case; i: number }) {
         </span>
         <span className="display absolute bottom-2 left-3 text-3xl text-white/15">
           {String(i + 1).padStart(2, "0")}
-        </span>
-        <span className="absolute right-2.5 top-2.5 rounded-full bg-black/40 px-2.5 py-1 text-[10px] text-white/90 backdrop-blur-sm">
-          {c.stat}
         </span>
       </div>
       <div className="mt-2.5 flex items-center justify-between">
