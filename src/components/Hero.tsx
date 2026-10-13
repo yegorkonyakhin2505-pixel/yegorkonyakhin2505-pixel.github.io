@@ -72,10 +72,10 @@ export default function Hero() {
         }}
       />
 
-      <p className="hero-fade mb-6 text-sm uppercase tracking-[0.25em] text-muted">
+      <p className="hero-fade mb-6 text-xs uppercase tracking-[0.18em] text-muted md:text-sm md:tracking-[0.25em]">
         Social media &amp; video marketing agency — Dubai, UAE
       </p>
-      <h1 className="display relative z-10 text-[11vw] leading-[0.95] md:text-[7.5vw]">
+      <h1 className="display relative z-10 text-[9.4vw] leading-[0.95] md:text-[7.5vw]">
         <span className="hero-line block overflow-hidden">
           <span className="block">
             We make <span className="text-accent">brands</span>
