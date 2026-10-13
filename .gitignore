@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 tools/
+
+# local SEO audit artifacts (not for the public repo)
+amplifymarketing.ae-audit/

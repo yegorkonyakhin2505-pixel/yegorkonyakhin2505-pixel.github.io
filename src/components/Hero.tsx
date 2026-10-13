@@ -28,15 +28,13 @@ export default function Hero() {
     window.addEventListener("pointermove", onMove);
 
     const ctx = gsap.context(() => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        gsap.set(".hero-line span", { y: 0 });
-        gsap.set(".hero-fade", { autoAlpha: 1, y: 0 });
-        return;
-      }
+      // Content is visible in the static HTML (good for LCP and crawlers);
+      // the reveal is an enhancement layered on top with `from` tweens.
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
       gsap.timeline({ defaults: { ease: "power4.out" } })
-        .to(".hero-line span", { y: 0, duration: 1.2, stagger: 0.12, delay: 0.15 })
-        .to(".hero-fade", { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.1 }, "-=0.7");
+        .from(".hero-line span", { yPercent: 100, duration: 1.2, stagger: 0.12, delay: 0.15 })
+        .from(".hero-fade", { autoAlpha: 0, y: 24, duration: 0.9, stagger: 0.1 }, "-=0.7");
 
       const btn = cta.current;
       if (btn) {
@@ -74,32 +72,32 @@ export default function Hero() {
         }}
       />
 
-      <p className="hero-fade mb-6 translate-y-6 text-sm uppercase tracking-[0.25em] text-muted opacity-0">
-        Creative marketing agency — Dubai, UAE
+      <p className="hero-fade mb-6 text-sm uppercase tracking-[0.25em] text-muted">
+        Social media &amp; video marketing agency — Dubai, UAE
       </p>
       <h1 className="display relative z-10 text-[11vw] leading-[0.95] md:text-[7.5vw]">
         <span className="hero-line block overflow-hidden">
-          <span className="block translate-y-full">
+          <span className="block">
             We make <span className="text-accent">brands</span>
           </span>
         </span>
         <span className="hero-line block overflow-hidden">
-          <span className="block translate-y-full">impossible to ignore.</span>
+          <span className="block">impossible to ignore.</span>
         </span>
       </h1>
       <div className="relative z-10 mt-10 flex flex-wrap items-center gap-8">
         <a
           ref={cta}
           href="#work"
-          className="hero-fade inline-flex translate-y-6 items-center gap-3 rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-wider text-accent-fg opacity-0 transition-shadow hover:shadow-[0_0_40px_-8px_var(--accent)]"
+          className="hero-fade inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-wider text-accent-fg transition-shadow hover:shadow-[0_0_40px_-8px_var(--accent)]"
         >
           See our work <span aria-hidden>↓</span>
         </a>
-        <p className="hero-fade max-w-xs translate-y-6 text-sm leading-relaxed text-muted opacity-0">
-          Strategy, content and campaigns that turn attention into revenue.
+        <p className="hero-fade max-w-xs text-sm leading-relaxed text-muted">
+          Filmed, scripted and edited content for Dubai businesses and creators, from AED 5,000 a month.
         </p>
       </div>
-      <p className="hero-fade absolute bottom-10 left-6 translate-y-6 text-xs uppercase tracking-[0.3em] text-muted opacity-0 md:left-10">
+      <p className="hero-fade absolute bottom-10 left-6 text-xs uppercase tracking-[0.3em] text-muted md:left-10">
         Scroll ↓
       </p>
     </section>

@@ -38,7 +38,9 @@ export default function Contact() {
             </a>
           </p>
         </div>
-        <p className="text-sm text-muted">© 2026 Amplify Marketing — Dubai, UAE</p>
+        <p className="text-sm text-muted">
+          © 2026 Amplify Marketing Management · Trade licence 1553366, Department of Economy and Tourism · Dubai, UAE
+        </p>
       </div>
     </section>
   );

@@ -27,6 +27,11 @@
   --font-sans: var(--font-inter);
 }
 
+html {
+  /* oversized display headings must never create a horizontal scroll on phones */
+  overflow-x: clip;
+}
+
 body {
   background: var(--bg);
   color: var(--fg);

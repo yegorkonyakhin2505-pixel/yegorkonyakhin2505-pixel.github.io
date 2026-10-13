@@ -114,6 +114,10 @@ export default function ServicesList() {
               <span className="mt-1 block text-xs text-muted transition-transform duration-300 group-hover:translate-x-3 md:text-sm">
                 {s.desc}
               </span>
+              {/* Full description in the HTML for crawlers and assistive tech; shown visually in the info box on click. */}
+              <span className="hidden">
+                {s.about} Included: {s.includes.join("; ")}.
+              </span>
             </span>
             <span className="relative text-2xl text-accent transition-transform duration-300 group-hover:rotate-90">
               +

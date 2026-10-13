@@ -24,7 +24,10 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      # The Pages mirror must not compete with amplifymarketing.ae in search: build it noindex.
       - run: npm run build
+        env:
+          NEXT_PUBLIC_NOINDEX: "1"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out

@@ -13,6 +13,7 @@ RUN npm run build
 # ---- Serve stage: static files on nginx ----
 FROM nginx:1.27-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY security-headers.conf /etc/nginx/snippets/security-headers.conf
 COPY --from=build /app/out /usr/share/nginx/html
 
 EXPOSE 80

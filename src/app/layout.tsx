@@ -4,6 +4,8 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Aurora from "@/components/Aurora";
 import VideoBackdrop from "@/components/VideoBackdrop";
+import JsonLd from "@/components/JsonLd";
+import { buildSiteGraph } from "@/lib/schema";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -16,11 +18,35 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const SITE = "https://amplifymarketing.ae";
+const TITLE = "Amplify Marketing — Social Media & Video Marketing Agency in Dubai";
+const DESCRIPTION =
+  "Dubai social media and video marketing agency. We film, script, edit and post content for UAE businesses and creators, with monthly analytics, from AED 5,000 a month. AI platforms, websites and SEO built and handed over.";
+
+// The GitHub Pages mirror is built with NEXT_PUBLIC_NOINDEX=1 so only amplifymarketing.ae is indexed.
+const NOINDEX = process.env.NEXT_PUBLIC_NOINDEX === "1";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://amplifymarketing.ae"),
-  title: "Amplify Marketing — Digital Marketing Agency, Dubai",
-  description:
-    "Amplify Marketing makes brands impossible to ignore. Strategy, content and campaigns for the UAE market.",
+  metadataBase: new URL(SITE),
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/" },
+  robots: NOINDEX ? { index: false, follow: false } : { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    url: SITE,
+    siteName: "Amplify Marketing",
+    title: TITLE,
+    description: DESCRIPTION,
+    locale: "en_AE",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Amplify Marketing — social media and video marketing agency, Dubai" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og.png"],
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
@@ -43,6 +69,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${archivo.variable} ${inter.variable} antialiased`}>
       <body className="grain min-h-full">
+        <JsonLd data={buildSiteGraph()} />
         <SmoothScroll />
         <Aurora />
         <VideoBackdrop />
