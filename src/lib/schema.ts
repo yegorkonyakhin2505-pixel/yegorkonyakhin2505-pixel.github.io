@@ -85,7 +85,7 @@ const PACKAGES = [
     name: "Starter",
     price: 5000,
     description:
-      "2 videos every week, filmed by our team, scripted and professionally edited, with an end-of-month analytics report.",
+      "6 videos filmed a month by our team, scripted and professionally edited, with an end-of-month analytics report.",
   },
   {
     slug: "growth",
@@ -268,7 +268,7 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "What is included in each Amplify Marketing package?",
-    a: "Every tier includes filming, scripting, editing and an end-of-month analytics report. Starter is 2 videos a week, Growth is 3 videos a week with AI-generated content access, uploading and scheduling and a monthly strategy call, and Scale is 6 videos a week with social media, niche and competitor analysis and a full business strategy.",
+    a: "Every tier includes filming, scripting, editing and an end-of-month analytics report. Starter is 6 filmed videos a month, Growth is 3 videos a week with AI-generated content access, uploading and scheduling and a monthly strategy call, and Scale is 6 videos a week with social media, niche and competitor analysis and a full business strategy.",
   },
   {
     q: "Do I need to film anything myself?",

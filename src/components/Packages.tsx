@@ -13,7 +13,7 @@ const TIERS = [
     price: "AED 5,000",
     popular: false,
     features: [
-      "2 videos every week",
+      "6 videos filmed a month",
       "Filmed by our team",
       "Scripts written for every video",
       "Professionally edited",
