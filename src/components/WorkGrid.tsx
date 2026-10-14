@@ -24,7 +24,6 @@ const BUSINESSES: Case[] = [
 ];
 
 const INFLUENCERS: Case[] = [
-  { title: "Lifestyle Creator", slug: "inf-lifestyle", tag: "Reels & Growth", art: "linear-gradient(140deg, color-mix(in oklab, var(--accent) 70%, #000) 0%, #0c0c0f 75%)" },
   { title: "Gym & Fitness", slug: "inf-gym", tag: "Content System", art: "radial-gradient(circle at 60% 30%, color-mix(in oklab, var(--accent) 60%, #fff) 0%, #0c0c0f 65%)" },
   { title: "Cinematic Films", slug: "inf-cinematic", tag: "Signature Edits", art: "linear-gradient(230deg, color-mix(in oklab, var(--accent) 55%, #000) 0%, #08080a 80%)" },
   { title: "Creator Montages", slug: "inf-montage", tag: "Fast-Cut Edits", art: "radial-gradient(circle at 25% 75%, color-mix(in oklab, var(--accent) 65%, #000) 0%, #0c0c0f 70%)" },
