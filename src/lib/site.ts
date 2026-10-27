@@ -12,6 +12,11 @@ export const LICENCE_AUTHORITY = "Department of Economy and Tourism, Dubai";
 export const FOUNDING_YEAR = "2025";
 
 export const SITE_URL = "https://multify.ae";
+
+// Bump when a video/poster file changes under the same name: media is cached for 30 days,
+// so browsers only refetch when the URL changes.
+export const MEDIA_VERSION = "20261027b";
+export const media = (path: string) => `${path}?v=${MEDIA_VERSION}`;
 export const SITE_HOST = "multify.ae";
 export const PORTAL_URL = "https://app.multify.ae";
 

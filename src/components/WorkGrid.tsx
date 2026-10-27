@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { BUSINESSES, INFLUENCERS, type Case } from "@/lib/work";
 import { runLazyGsap } from "@/lib/motion";
+import { media } from "@/lib/site";
 
 function Tile({ c, i }: { c: Case; i: number }) {
   const box = useRef<HTMLDivElement>(null);
@@ -73,8 +74,8 @@ function Tile({ c, i }: { c: Case; i: number }) {
             <video
               ref={vid}
               className="h-full w-full object-cover"
-              src={`/media/work/${c.slug}.mp4`}
-              poster={`/media/work/${c.slug}-poster.jpg`}
+              src={media(`/media/work/${c.slug}.mp4`)}
+              poster={media(`/media/work/${c.slug}-poster.jpg`)}
               title={`${c.title} — ${c.tag}`}
               muted
               loop

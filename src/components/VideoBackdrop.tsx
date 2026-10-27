@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { runLazyGsap, wantsMotion, whenIdle } from "@/lib/motion";
+import { media } from "@/lib/site";
 
 export default function VideoBackdrop() {
   const root = useRef<HTMLDivElement>(null);
@@ -41,7 +42,7 @@ export default function VideoBackdrop() {
         <video
           className="vb-media h-full w-full object-cover will-change-transform"
           style={{ opacity: ready ? "var(--video-op)" : 0, transition: "opacity 1s ease" }}
-          src="/showreel.mp4"
+          src={media("/showreel.mp4")}
           autoPlay
           muted
           loop

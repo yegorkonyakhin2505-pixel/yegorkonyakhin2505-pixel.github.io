@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { wantsMotion, whenIdle } from "@/lib/motion";
+import { media } from "@/lib/site";
 
 /**
  * Infinite "video tape" hero background built from the team's real footage —
@@ -25,7 +26,7 @@ function TapeSquare({ slug, n, playVideo }: { slug: string; n: number; playVideo
       {playVideo && ok && (
         <video
           className="h-full w-full object-cover"
-          src={`/media/tape/${slug}.mp4`}
+          src={media(`/media/tape/${slug}.mp4`)}
           autoPlay
           muted
           loop
