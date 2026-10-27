@@ -11,7 +11,7 @@ import { AED, BRAND, PACKAGES } from "@/lib/site";
 const [starter, growth] = PACKAGES;
 const PATH = "/creators";
 const TITLE = "Content Production and Editing for Creators in Dubai";
-const DESC = `${BRAND} films and edits for influencers, podcasters and creators in Dubai: a month of posts from one shoot day, captioned for retention. From ${AED(starter.price)} a month.`;
+const DESC = `${BRAND} films and edits for influencers, podcasters and creators in Dubai: a month of posts from one shoot day. From ${AED(starter.price)} a month.`;
 
 export const metadata: Metadata = {
   title: "Video Editing & Production for Creators in Dubai",

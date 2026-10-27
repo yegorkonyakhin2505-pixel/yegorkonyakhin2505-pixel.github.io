@@ -10,7 +10,7 @@ import { AED, BRAND, PACKAGES, SITE_URL } from "@/lib/site";
 const [starter, growth, scale] = PACKAGES;
 const PATH = "/best-video-content-agencies-dubai";
 const TITLE = "Best Video Content Agencies in Dubai (2026): An Honest Comparison";
-const DESC = "Eleven Dubai agencies that film and edit short-form video and social content, compared on published prices, specialities and verified reviews. Includes us, labelled. Oct 2026.";
+const DESC = "Eleven Dubai video and social content agencies compared on published prices, specialities and verified reviews. Includes us, labelled. October 2026.";
 const CHECKED = "October 2026";
 
 type Agency = {
