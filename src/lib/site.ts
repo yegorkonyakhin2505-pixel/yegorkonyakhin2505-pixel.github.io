@@ -13,7 +13,7 @@ export const FOUNDING_YEAR = "2025";
 
 export const SITE_URL = "https://multify.ae";
 export const SITE_HOST = "multify.ae";
-export const PORTAL_URL = "https://app.amplifymarketing.ae";
+export const PORTAL_URL = "https://app.multify.ae";
 
 export const CONTACT_EMAIL = "hello@multify.ae";
 export const PHONE_DISPLAY = "+971 52 452 2978";
