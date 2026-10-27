@@ -127,6 +127,7 @@ export const POSTS: Post[] = [
       { type: "h2", text: "What a fair quote looks like" },
       { type: "p", text: `A clear monthly fee, a video count, the number of shoot days, what is posted and where, and the report you get. For reference, Multify's packages are ${AED(starter.price)} for 6 filmed videos a month, ${AED(growth.price)} for 3 a week and ${AED(scale.price)} for 6 a week, filming, scripts, editing and a monthly report included, cancellable monthly.` },
       { type: "link", text: "The full package comparison:", href: "/pricing", label: "Pricing and FAQ" },
+      { type: "link", text: "Eleven Dubai agencies compared on what they publish, including us:", href: "/best-video-content-agencies-dubai", label: "Best video content agencies in Dubai" },
       { type: "h2", text: "Run a 30-day test" },
       { type: "ol", items: [
         "Week 1: strategy call, scripts approved, shoot date booked.",
