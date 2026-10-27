@@ -19,6 +19,8 @@ import {
   WHATSAPP_URL,
 } from "@/lib/site";
 import type { Faq } from "@/lib/faqs";
+import type { Industry } from "@/lib/industries";
+import type { Post } from "@/lib/posts";
 
 export { SITE_URL };
 
@@ -45,6 +47,8 @@ const SERVICES = [
     description: "Creative concepts, hooks and scripts written for every video, plus access to AI-generated content on higher tiers." },
   { slug: "video-editing", name: "Video Editing", page: "/services/video-production-dubai",
     description: "Short-form edits with captions and subtitles, sound design and music, and colour grading, cut for sound-off viewing." },
+  { slug: "creator-content-production", name: "Creator Content Production and Editing", page: "/creators",
+    description: "Filming and editing systems for influencers, podcasters and creators in Dubai: a month of posts from one shoot, fast-cut and cinematic edits." },
   { slug: "ai-platform-development", name: "AI Platform Development and Integration", page: "/services/ai-platforms-dubai",
     description: "Custom AI platforms, agents and automations built, integrated and fully handed over to the client." },
   { slug: "website-development", name: "Website Development", page: "/services/ai-platforms-dubai",
@@ -86,7 +90,7 @@ export function buildSiteGraph() {
         priceRange: "AED 5,000 - AED 17,000+ per month",
         currenciesAccepted: "AED",
         knowsLanguage: ["en", "ru"],
-        knowsAbout: ["Social media marketing", "Video production", "Content creation", "Scriptwriting", "Video editing", "AI platform development", "Website development", "Search engine optimisation", "Answer engine optimisation"],
+        knowsAbout: ["Social media marketing", "Video production", "Content creation", "Scriptwriting", "Video editing", "Creator content", "Real estate marketing", "Car rental marketing", "Hospitality marketing", "AI platform development", "Website development", "Search engine optimisation", "Answer engine optimisation"],
         contactPoint: [
           { "@type": "ContactPoint", contactType: "sales", telephone: PHONE_E164, email: CONTACT_EMAIL, areaServed: "AE", availableLanguage: ["English", "Russian"], url: WHATSAPP_URL },
           { "@type": "ContactPoint", contactType: "customer support", telephone: PHONE_E164, email: CONTACT_EMAIL, areaServed: "AE", availableLanguage: ["English", "Russian"] },
@@ -211,6 +215,77 @@ export function buildServicePage(slug: (typeof SERVICE_PAGES)[number]["slug"]) {
     areaServed: AREA_SERVED,
     url: `${SITE_URL}${page.path}`,
     ...(linked.length ? { hasOfferCatalog: { "@type": "OfferCatalog", name: page.name, itemListElement: linked.map((l) => ({ "@type": "Offer", itemOffered: l })) } } : {}),
+  };
+}
+
+// Industry page node: the same services, scoped to an audience.
+export function buildIndustryService(ind: Industry) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SITE_URL}${ind.path}#service`,
+    name: ind.title,
+    serviceType: "Social media marketing and video production",
+    description: ind.description,
+    provider: { "@id": ID.org },
+    areaServed: AREA_SERVED,
+    audience: { "@type": "BusinessAudience", audienceType: ind.name },
+    url: `${SITE_URL}${ind.path}`,
+    isRelatedTo: ["social-media-marketing", "video-production", "video-editing"].map((s) => ({ "@id": ID.svc(s) })),
+  };
+}
+
+// Creators page node.
+export function buildCreatorsService(path: string, name: string, description: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SITE_URL}${path}#service`,
+    name,
+    serviceType: "Creator content production and editing",
+    description,
+    provider: { "@id": ID.org },
+    areaServed: AREA_SERVED,
+    audience: { "@type": "Audience", audienceType: "Content creators, influencers and podcasters" },
+    url: `${SITE_URL}${path}`,
+    sameAs: `${SITE_URL}/#service-creator-content-production`,
+  };
+}
+
+// Blog post node. Author is the founder Person already in the site graph.
+export function buildBlogPosting(post: Post) {
+  const yegor = FOUNDERS[0];
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${SITE_URL}${post.path}#article`,
+    headline: post.title,
+    description: post.description,
+    url: `${SITE_URL}${post.path}`,
+    mainEntityOfPage: { "@id": `${SITE_URL}${post.path}#webpage` },
+    datePublished: post.published,
+    dateModified: post.updated,
+    author: { "@type": "Person", "@id": ID.person(yegor.id), name: yegor.name, url: `${SITE_URL}/about` },
+    publisher: { "@id": ID.org },
+    image: `${SITE_URL}/og.png`,
+    inLanguage: "en",
+    keywords: post.keywords.join(", "),
+    isPartOf: { "@type": "Blog", "@id": `${SITE_URL}/blog#blog`, name: `${BRAND} blog` },
+  };
+}
+
+// Blog index: a Blog node listing the posts.
+export function buildBlog(posts: Post[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": `${SITE_URL}/blog#blog`,
+    url: `${SITE_URL}/blog`,
+    name: `${BRAND} blog`,
+    description: "Guides on social media, short-form video, pricing and AI search for Dubai businesses.",
+    publisher: { "@id": ID.org },
+    inLanguage: "en",
+    blogPost: posts.map((p) => ({ "@id": `${SITE_URL}${p.path}#article` })),
   };
 }
 

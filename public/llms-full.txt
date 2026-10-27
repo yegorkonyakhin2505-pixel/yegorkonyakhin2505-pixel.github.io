@@ -14,6 +14,13 @@ Multify is a social media and video marketing agency in Dubai, United Arab Emira
 
 3. AI platforms, websites and SEO/AEO (https://multify.ae/services/ai-platforms-dubai): custom AI agents and automations (lead handling, booking and follow-up flows, content and reporting tools, internal assistants, client portals); fast static business websites with structured data, sitemap, Open Graph and llms.txt; company email on the client's domain; SEO (one page per service, clear headings, plain facts, fast loading, consistent listings) and AEO, answer engine optimisation (entity statement, Q&A sections, schema.org data, llms.txt, consistent name/phone/address across profiles). Process: scoping call → written fixed quote → build with working versions shown along the way → handover of accounts, domains and code in the client's name with documentation → optional support. Priced per project.
 
+## Industries
+
+- Real estate (https://multify.ae/industries/real-estate-marketing-dubai): listing walkthroughs (30–60 s), agent talking-heads, area and community guides, market updates, handovers, client testimonials. A shoot day covers 2–4 properties. Property advertisements in Dubai, including social media, require a Dubai Land Department advertising permit (Trakheesi) and the permit number should appear on the post; agents should be RERA-registered. Typical package: Growth; single agents start on Starter; brokerages with several agents on camera use Scale.
+- Car rental (https://multify.ae/industries/car-rental-marketing-dubai): one-car fleet reels with the daily rate on screen, driving and location shots from a chase car where permitted, booking explainers (deposit, insurance, mileage, delivery), customer handovers, seasonal content. A shoot day covers 4–8 cars plus one driving location. Public-location filming in Dubai generally needs a Dubai Film and TV Commission permit; no drones without authorisation. Typical package: Growth.
+- Restaurants, lounges and nightlife (https://multify.ae/industries/hospitality-nightlife-marketing-dubai): atmosphere reels filmed on real nights (usually 9pm–1am), event recaps delivered within 48–72 hours, menu and dish content, room and booth tours, staff pieces, weekly promotions. Alcohol cannot be promoted in advertising in the UAE; paid creator promotion follows UAE Media Council rules. Typical package: Growth; cafés without events start on Starter; clubs and groups use Scale.
+- Creators, influencers and podcasters (https://multify.ae/creators): a month of posts from one shoot day; fast-cut montages, cinematic edits, behind-the-scenes, podcast clips; editing-only from supplied footage quoted per video or per month; filming plus editing on the Starter or Growth packages. Paid creator content follows UAE Media Council rules including the advertiser permit.
+
 ## Packages (AED per month, cancel anytime, no VAT added, invoiced at the start of each month, paid by bank transfer)
 
 - Starter — AED 5,000: 6 videos filmed a month by our team, scripts written for every video, professionally edited, end-of-month analytics report. Client posts the content.
@@ -72,6 +79,15 @@ A: Yes. Videos, websites and platforms are the client's once paid for; builds ar
 - https://multify.ae/services/social-media-marketing-dubai
 - https://multify.ae/services/video-production-dubai
 - https://multify.ae/services/ai-platforms-dubai
+- https://multify.ae/industries/real-estate-marketing-dubai
+- https://multify.ae/industries/car-rental-marketing-dubai
+- https://multify.ae/industries/hospitality-nightlife-marketing-dubai
+- https://multify.ae/creators
+- https://multify.ae/blog — guides: social media management cost in Dubai (2026), how to choose a video content agency in Dubai, real estate video marketing formats, what is AEO
+- https://multify.ae/blog/social-media-management-cost-dubai
+- https://multify.ae/blog/how-to-choose-video-content-agency-dubai
+- https://multify.ae/blog/real-estate-video-marketing-dubai
+- https://multify.ae/blog/what-is-aeo-answer-engine-optimisation
 - https://multify.ae/about — founders, legal entity, principles, name change
 - https://multify.ae/contact
 - https://multify.ae/privacy, https://multify.ae/terms

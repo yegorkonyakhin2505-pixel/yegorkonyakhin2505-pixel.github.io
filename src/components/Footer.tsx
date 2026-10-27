@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { INDUSTRIES } from "@/lib/industries";
 import {
   BRAND,
   CONTACT_EMAIL,
@@ -27,7 +28,7 @@ const SOCIALS = [
 export default function Footer() {
   return (
     <footer className="border-t border-line px-6 pb-10 pt-14 text-sm text-muted md:px-10">
-      <div className="grid gap-10 md:grid-cols-4">
+      <div className="grid gap-10 md:grid-cols-5">
         <div>
           <Link href="/" className="display text-xl text-fg">
             {BRAND}<span className="text-accent">.</span>
@@ -44,7 +45,18 @@ export default function Footer() {
                 <Link href={s.path} className={link}>{s.name}</Link>
               </li>
             ))}
+            <li><Link href="/creators" className={link}>For creators</Link></li>
             <li><Link href="/pricing" className={link}>Packages and prices</Link></li>
+          </ul>
+        </div>
+        <div>
+          <p className="mb-3 text-xs uppercase tracking-[0.25em]">Industries</p>
+          <ul className="space-y-2">
+            {INDUSTRIES.map((i) => (
+              <li key={i.slug}>
+                <Link href={i.path} className={link}>{i.name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
@@ -53,6 +65,7 @@ export default function Footer() {
             {NAV_PAGES.map((p) => (
               <li key={p.href}><Link href={p.href} className={link}>{p.label}</Link></li>
             ))}
+            <li><Link href="/blog" className={link}>Blog</Link></li>
             <li><a href={PORTAL_URL} target="_blank" rel="noopener" className={link}>Client portal</a></li>
             {LEGAL_PAGES.map((p) => (
               <li key={p.href}><Link href={p.href} className={link}>{p.label}</Link></li>
