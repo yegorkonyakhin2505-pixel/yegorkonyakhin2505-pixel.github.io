@@ -1,34 +1,41 @@
-# Amplify Marketing
+# Multify
 
-> Amplify Marketing Management is a social media and video marketing agency in Dubai, United Arab Emirates (Dubai trade licence 1553366, Department of Economy and Tourism). We film, script, edit and publish short-form video and social media content for UAE businesses and creators on monthly retainers, and we build AI platforms, websites and SEO/AEO for clients with full handover. Founded by Yegor Konyakhin in 2025.
+> Multify is a social media and video marketing agency in Dubai, United Arab Emirates, trading under Amplify Marketing Management (Dubai trade licence 1553366, Department of Economy and Tourism). We film, script, edit and publish short-form video and social media content for UAE businesses and creators on monthly retainers, and we build AI platforms, websites and SEO/AEO for clients with full handover. Founded in Dubai in 2025 by Yegor Konyakhin (strategy, accounts, social media) and Asset Zhumabayev (filming and editing).
 
 ## What we do
 
-- Social media management: content calendars, captions, uploading and scheduling, community management, monthly analytics reporting
-- Video production: concepts, scriptwriting, shoot days with our own team, editing and captions built for sound-off viewing
+- Social media marketing: content calendars, captions, uploading and scheduling, community management, monthly analytics reporting
+- Video production: concepts, scriptwriting, shoot days on location across Dubai with our own team, editing and captions built for sound-off viewing
 - Content for businesses: barbershops, car clubs, podcasts, car rental, clothing brands, nightlife venues, esports teams, karaoke lounges, real estate, product and tech promo films
 - Content for creators and influencers: reels, growth systems, cinematic films, montages, behind-the-scenes, fitness content
-- AI platforms: custom AI agents and automations, AI platform development and integration
+- AI platforms: custom AI agents and automations, AI platform development and integration, client portals
 - Websites, company email setup, SEO and AEO (answer engine optimisation)
 
-## Pricing (AED, per month, cancel anytime)
+## Pricing (AED, per month, cancel anytime, no VAT added)
 
-- Starter, AED 5,000: 6 videos filmed a month, filmed by our team, scripts for every video, professional editing, end-of-month analytics report
+- Starter, AED 5,000: 6 videos filmed a month by our team, scripts for every video, professional editing, end-of-month analytics report
 - Growth, AED 8,000 (most popular): 3 videos every week, filmed, scripted and edited, access to AI-generated content, uploading and scheduling handled, monthly strategy call, end-of-month analytics report
 - Scale, AED 17,000: 6 videos every week, everything in Starter and Growth, in-depth social media analysis, niche and competitor analysis, full strategy for your business
-- AI Platforms: custom, quoted per project
+- AI platforms, websites, SEO/AEO: quoted per project
 
 ## Area served
 
-Dubai and the United Arab Emirates.
+Dubai and the United Arab Emirates. Shoot days on location in Dubai; elsewhere in the UAE by arrangement.
 
 ## Contact
 
-- Website: https://amplifymarketing.ae
-- Email: amplifymarketingdubai@gmail.com
+- Website: https://multify.ae
+- Email: hello@multify.ae
 - Phone and WhatsApp: +971 52 452 2978
 - Client portal: https://app.amplifymarketing.ae
 
 ## Pages
 
-- [Home](https://amplifymarketing.ae/): services, work, packages and contact
+- [Home](https://multify.ae/): services, work, packages, FAQ and contact
+- [Pricing](https://multify.ae/pricing): the three packages compared, what drives cost, terms, 10-question FAQ
+- [Social media marketing in Dubai](https://multify.ae/services/social-media-marketing-dubai): what a month of management looks like, platforms, approvals, reporting
+- [Video production in Dubai](https://multify.ae/services/video-production-dubai): scripts, shoot days, editing for Reels, TikTok and Shorts
+- [AI platforms, websites and SEO/AEO](https://multify.ae/services/ai-platforms-dubai): custom AI agents and automations, websites, search and answer-engine optimisation
+- [About](https://multify.ae/about): founders, legal entity, how we work
+- [Contact](https://multify.ae/contact): email, phone, WhatsApp, service area
+- [Full text for language models](https://multify.ae/llms-full.txt)

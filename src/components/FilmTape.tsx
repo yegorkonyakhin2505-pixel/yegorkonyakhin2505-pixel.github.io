@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 /**
- * Infinite "video tape" hero background built from Amplify's real footage —
+ * Infinite "video tape" hero background built from the team's real footage —
  * two rows of small muted clips (compressed 8s loops in /media/tape/) drifting
  * in opposite directions. On small screens the clips render as gradient frames
  * to keep scrolling smooth.

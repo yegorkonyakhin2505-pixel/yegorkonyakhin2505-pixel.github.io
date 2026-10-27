@@ -3,33 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { BUSINESSES, INFLUENCERS, type Case } from "@/lib/work";
 
 gsap.registerPlugin(ScrollTrigger);
-
-type Case = { title: string; slug: string; tag: string; art: string };
-
-// Client names kept private — industry labels only, footage speaks for itself.
-// No performance stats shown: only real, client-approved numbers belong here.
-const BUSINESSES: Case[] = [
-  { title: "Barbershops", slug: "barbershop", tag: "Content & Reels", art: "radial-gradient(circle at 70% 20%, color-mix(in oklab, var(--accent) 65%, #fff) 0%, #101012 65%)" },
-  { title: "BMW Car Club", slug: "bmw-club", tag: "Event Films & Socials", art: "linear-gradient(220deg, color-mix(in oklab, var(--accent) 55%, #000) 0%, #060607 80%)" },
-  { title: "Podcasts", slug: "podcast", tag: "Production & Clips", art: "radial-gradient(circle at 30% 80%, color-mix(in oklab, var(--accent) 70%, #000) 0%, #101012 70%)" },
-  { title: "Car Rental", slug: "car-rental", tag: "Promo & Socials", art: "linear-gradient(150deg, color-mix(in oklab, var(--accent) 70%, #000) 0%, #101012 70%)" },
-  { title: "Clothing Brand", slug: "clothing", tag: "Campaign Content", art: "linear-gradient(320deg, color-mix(in oklab, var(--accent) 60%, #000) 0%, #0b0b0d 75%)" },
-  { title: "Nightlife & Clubs", slug: "nightclub", tag: "Event Coverage", art: "radial-gradient(circle at 50% 10%, color-mix(in oklab, var(--accent) 55%, #fff) 0%, #0d0d10 70%)" },
-  { title: "Esports Team", slug: "esports", tag: "Montages & Socials", art: "linear-gradient(200deg, color-mix(in oklab, var(--accent) 65%, #000) 0%, #08080a 80%)" },
-  { title: "Karaoke Lounge", slug: "karaoke", tag: "Promo & Reels", art: "radial-gradient(circle at 20% 30%, color-mix(in oklab, var(--accent) 60%, #fff) 0%, #0c0c0f 65%)" },
-  { title: "Real Estate", slug: "real-estate", tag: "Social Growth", art: "linear-gradient(150deg, color-mix(in oklab, var(--accent) 75%, #000) 0%, #101012 70%)" },
-  { title: "Product Ads", slug: "laptop", tag: "Tech & Promo Films", art: "linear-gradient(260deg, color-mix(in oklab, var(--accent) 60%, #000) 0%, #0b0b0d 75%)" },
-];
-
-const INFLUENCERS: Case[] = [
-  { title: "Gym & Fitness", slug: "inf-gym", tag: "Content System", art: "radial-gradient(circle at 60% 30%, color-mix(in oklab, var(--accent) 60%, #fff) 0%, #0c0c0f 65%)" },
-  { title: "Cinematic Films", slug: "inf-cinematic", tag: "Signature Edits", art: "linear-gradient(230deg, color-mix(in oklab, var(--accent) 55%, #000) 0%, #08080a 80%)" },
-  { title: "Creator Montages", slug: "inf-montage", tag: "Fast-Cut Edits", art: "radial-gradient(circle at 25% 75%, color-mix(in oklab, var(--accent) 65%, #000) 0%, #0c0c0f 70%)" },
-  { title: "Behind the Scenes", slug: "inf-backstage", tag: "Production Content", art: "linear-gradient(300deg, color-mix(in oklab, var(--accent) 60%, #000) 0%, #0a0a0d 75%)" },
-  { title: "Gym Workouts", slug: "inf-workout", tag: "Training Content", art: "radial-gradient(circle at 75% 70%, color-mix(in oklab, var(--accent) 55%, #fff) 0%, #0b0b0e 68%)" },
-];
 
 function Tile({ c, i }: { c: Case; i: number }) {
   const vid = useRef<HTMLVideoElement>(null);
@@ -81,6 +57,7 @@ function Tile({ c, i }: { c: Case; i: number }) {
             className="h-full w-full object-cover"
             src={`/media/work/${c.slug}.mp4`}
             poster={`/media/work/${c.slug}-poster.jpg`}
+            title={`${c.title} — ${c.tag}`}
             muted
             loop
             playsInline
@@ -103,6 +80,7 @@ function Tile({ c, i }: { c: Case; i: number }) {
         <div>
           <h3 className="display text-sm md:text-base">{c.title}</h3>
           <p className="mt-0.5 text-xs text-muted">{c.tag}</p>
+          <p className="hidden">{c.description}</p>
         </div>
       </div>
     </div>
@@ -144,6 +122,9 @@ export default function WorkGrid() {
       <h2 className="work-heading display mb-10 text-5xl md:mb-14 md:text-[4.5vw]">
         For <span className="text-accent">businesses</span>
       </h2>
+      <p className="-mt-6 mb-10 max-w-2xl text-sm leading-relaxed text-muted md:mb-14">
+        Work by our team across Dubai: barbershops, car clubs, podcasts, car rental, clothing, nightlife, esports, karaoke, real estate and product films.
+      </p>
       {/* 10 tiles → always two even rows of 5 on desktop */}
       <div className="grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
         {BUSINESSES.map((c, i) => (
@@ -154,8 +135,8 @@ export default function WorkGrid() {
       <h2 className="work-heading display mb-10 mt-24 text-5xl md:mb-14 md:mt-32 md:text-[4.5vw]">
         For <span className="text-accent">influencers</span>
       </h2>
-      {/* 6 tiles → one complete row on desktop, no orphans */}
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-6 md:gap-4">
+      {/* 5 tiles → one row on desktop */}
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
         {INFLUENCERS.map((c, i) => (
           <Tile key={c.slug} c={c} i={i} />
         ))}

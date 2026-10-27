@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -84,7 +85,10 @@ export default function Packages() {
           <span className="text-accent">package</span>
         </h2>
         <p className="max-w-xs text-base leading-relaxed text-muted">
-          Every tier: we film, we script, we edit, we report. Cancel anytime.
+          Every tier: we film, we script, we edit, we report. Cancel anytime.{" "}
+          <Link href="/pricing" className="text-fg underline underline-offset-4 hover:text-accent">
+            Full pricing and FAQ →
+          </Link>
         </p>
       </div>
 

@@ -1,4 +1,5 @@
-const CLIENT_PORTAL_URL = "https://app.amplifymarketing.ae";
+import Link from "next/link";
+import { BRAND, NAV_PAGES, PORTAL_URL } from "@/lib/site";
 
 const pill =
   "rounded-full border px-4 py-2 text-xs backdrop-blur-md transition-colors sm:px-5 sm:py-2.5 sm:text-sm";
@@ -6,13 +7,20 @@ const pill =
 export default function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 md:px-10">
-      <a href="#" className="display text-lg tracking-tight md:text-xl">
-        Amplify<span className="text-accent">.</span>
-      </a>
+      <Link href="/" className="display text-lg tracking-tight md:text-xl" aria-label={`${BRAND} home`}>
+        {BRAND}<span className="text-accent">.</span>
+      </Link>
       <nav className="flex items-center gap-2 sm:gap-3" aria-label="Primary">
+        <div className="mr-2 hidden items-center gap-5 text-sm text-muted md:flex">
+          {NAV_PAGES.map((p) => (
+            <Link key={p.href} href={p.href} className="transition-colors hover:text-fg">
+              {p.label}
+            </Link>
+          ))}
+        </div>
         {/* Quiet outline variant: same pill, transparent fill, muted text */}
         <a
-          href={CLIENT_PORTAL_URL}
+          href={PORTAL_URL}
           target="_blank"
           rel="noopener"
           className={`${pill} border-line bg-transparent text-muted hover:border-fg/40 hover:text-fg`}
@@ -20,12 +28,12 @@ export default function Nav() {
           <span className="hidden min-[480px]:inline">Client login</span>
           <span className="min-[480px]:hidden">Login</span>
         </a>
-        <a
-          href="#contact"
+        <Link
+          href="/contact"
           className={`${pill} border-line bg-card/60 hover:border-transparent hover:bg-accent hover:text-accent-fg`}
         >
           Start a project
-        </a>
+        </Link>
       </nav>
     </header>
   );

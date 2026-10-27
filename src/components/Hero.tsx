@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import FilmTape from "@/components/FilmTape";
+import { BRAND } from "@/lib/site";
 
 export default function Hero() {
   const root = useRef<HTMLElement>(null);
@@ -72,10 +73,11 @@ export default function Hero() {
         }}
       />
 
-      <p className="hero-fade mb-6 text-xs uppercase tracking-[0.18em] text-muted md:text-sm md:tracking-[0.25em]">
-        Social media &amp; video marketing agency — Dubai, UAE
-      </p>
-      <h1 className="display relative z-10 text-[9.4vw] leading-[0.95] md:text-[7.5vw]">
+      {/* The keyword-bearing H1 is the small kicker; the big display line stays the visual headline. */}
+      <h1 className="hero-fade mb-6 text-xs font-normal uppercase tracking-[0.18em] text-muted md:text-sm md:tracking-[0.25em]">
+        Social media &amp; video marketing agency in Dubai, UAE
+      </h1>
+      <p className="display relative z-10 text-[9.4vw] leading-[0.95] md:text-[7.5vw]" aria-label="We make brands impossible to ignore.">
         <span className="hero-line block overflow-hidden">
           <span className="block">
             We make <span className="text-accent">brands</span>
@@ -84,7 +86,7 @@ export default function Hero() {
         <span className="hero-line block overflow-hidden">
           <span className="block">impossible to ignore.</span>
         </span>
-      </h1>
+      </p>
       <div className="relative z-10 mt-10 flex flex-wrap items-center gap-8">
         <a
           ref={cta}
@@ -93,8 +95,8 @@ export default function Hero() {
         >
           See our work <span aria-hidden>↓</span>
         </a>
-        <p className="hero-fade max-w-xs text-sm leading-relaxed text-muted">
-          Filmed, scripted and edited content for Dubai businesses and creators, from AED 5,000 a month.
+        <p className="hero-fade max-w-sm text-sm leading-relaxed text-muted">
+          {BRAND} is a Dubai video and social media marketing agency. We film, script, edit, post and report for UAE businesses and creators, from AED 5,000 a month.
         </p>
       </div>
       <p className="hero-fade absolute bottom-10 left-6 text-xs uppercase tracking-[0.3em] text-muted md:left-10">

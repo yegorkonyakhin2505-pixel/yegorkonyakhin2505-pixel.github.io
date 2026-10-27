@@ -1,7 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import gsap from "gsap";
+import { SERVICE_PAGES } from "@/lib/site";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -125,6 +127,16 @@ export default function ServicesList() {
           </button>
         ))}
       </div>
+
+      <p className="mt-8 text-sm text-muted">
+        Read more:{" "}
+        {SERVICE_PAGES.map((s, i) => (
+          <span key={s.slug}>
+            <Link href={s.path} className="text-fg underline underline-offset-4 hover:text-accent">{s.short}</Link>
+            {i < SERVICE_PAGES.length - 1 ? " · " : ""}
+          </span>
+        ))}
+      </p>
 
       {/* service info box */}
       {open && (

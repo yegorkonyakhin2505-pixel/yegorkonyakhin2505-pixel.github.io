@@ -1,12 +1,13 @@
 import type { MetadataRoute } from "next";
+import { BRAND } from "@/lib/site";
 
 export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Amplify Marketing",
-    short_name: "Amplify",
-    description: "Digital marketing agency — Dubai, UAE. We make brands impossible to ignore.",
+    name: BRAND,
+    short_name: BRAND,
+    description: "Social media and video marketing agency — Dubai, UAE. We make brands impossible to ignore.",
     start_url: "/",
     display: "standalone",
     background_color: "#0c0b10",

@@ -1,8 +1,4 @@
-// Single place to change the public contact details.
-const CONTACT_EMAIL = "amplifymarketingdubai@gmail.com";
-const CONTACT_PHONE_DISPLAY = "+971 52 452 2978";
-const CONTACT_PHONE_E164 = "+971524522978";
-const WHATSAPP_URL = `https://wa.me/${CONTACT_PHONE_E164.replace("+", "")}`;
+import { CONTACT_EMAIL, PHONE_DISPLAY, PHONE_E164, WHATSAPP_URL } from "@/lib/site";
 
 const link =
   "select-all text-fg underline-offset-4 transition-colors hover:text-accent hover:underline";
@@ -13,9 +9,9 @@ export default function Contact() {
       <p className="mb-6 text-sm uppercase tracking-[0.3em] text-muted">
         Got a project in mind?
       </p>
-      <span className="display outline-text block text-[16vw] leading-none md:text-[13vw]">
+      <h2 className="display outline-text block text-[16vw] leading-none md:text-[13vw]">
         Let&apos;s talk
-      </span>
+      </h2>
 
       <div className="mt-16 flex flex-wrap items-end justify-between gap-8">
         <div className="flex flex-col gap-3 text-sm text-muted">
@@ -27,8 +23,8 @@ export default function Contact() {
           </p>
           <p>
             Phone:{" "}
-            <a href={`tel:${CONTACT_PHONE_E164}`} className={link}>
-              {CONTACT_PHONE_DISPLAY}
+            <a href={`tel:${PHONE_E164}`} className={link}>
+              {PHONE_DISPLAY}
             </a>
           </p>
           <p>
@@ -38,8 +34,8 @@ export default function Contact() {
             </a>
           </p>
         </div>
-        <p className="text-sm text-muted">
-          © 2026 Amplify Marketing Management · Trade licence 1553366, Department of Economy and Tourism · Dubai, UAE
+        <p className="max-w-sm text-sm leading-relaxed text-muted">
+          Tell us what you sell and who you want to reach. We reply with the package that fits and a date for a first shoot.
         </p>
       </div>
     </section>
