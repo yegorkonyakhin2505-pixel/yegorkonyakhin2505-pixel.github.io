@@ -10,7 +10,7 @@ import { BRAND, SERVICE_PAGES } from "@/lib/site";
 const page = SERVICE_PAGES[0];
 const PATH = page.path;
 const TITLE = "Social Media Marketing Agency in Dubai — Instagram, TikTok, Shorts, run for you";
-const DESC = `${BRAND} runs Instagram, TikTok and YouTube Shorts for Dubai businesses: monthly content calendar, filmed and scripted videos, captions, posting, replies and a monthly report. From AED 5,000 a month.`;
+const DESC = `${BRAND} runs Instagram, TikTok and YouTube Shorts for Dubai businesses: filmed videos, captions, posting, replies and a monthly report. From AED 5,000 a month.`;
 
 export const metadata: Metadata = {
   title: "Social Media Marketing Agency in Dubai",

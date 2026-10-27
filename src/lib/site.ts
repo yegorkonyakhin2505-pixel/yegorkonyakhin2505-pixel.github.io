@@ -33,7 +33,7 @@ export const FOUNDERS = [
 
 export const TAGLINE = "We make brands impossible to ignore.";
 export const DESCRIPTION =
-  "Multify is a Dubai social media and video marketing agency. We film, script, edit and post short-form content for UAE businesses and creators, with monthly analytics, from AED 5,000 a month. AI platforms, websites and SEO built and handed over.";
+  "Dubai social media and video marketing agency. We film, script, edit, post and report short-form content for UAE businesses and creators, from AED 5,000 a month.";
 
 export const PACKAGES = [
   {

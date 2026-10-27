@@ -8,7 +8,7 @@ import { AED, BRAND, PACKAGES } from "@/lib/site";
 
 const PATH = "/pricing";
 const TITLE = "Social Media & Video Marketing Packages and Prices in Dubai (AED)";
-const DESC = `${BRAND} packages: Starter AED 5,000, Growth AED 8,000 and Scale AED 17,000 a month. Filmed, scripted, edited and reported. No VAT added, cancel anytime. Full comparison and FAQ.`;
+const DESC = `${BRAND} packages: Starter AED 5,000, Growth AED 8,000, Scale AED 17,000 a month. Filmed, scripted, edited and reported. No VAT, cancel anytime.`;
 
 export const metadata: Metadata = {
   title: "Pricing — packages from AED 5,000 a month",

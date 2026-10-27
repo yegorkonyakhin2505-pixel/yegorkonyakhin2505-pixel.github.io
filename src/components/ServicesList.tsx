@@ -2,11 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import gsap from "gsap";
 import { SERVICE_PAGES } from "@/lib/site";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { runLazyGsap } from "@/lib/motion";
 
 const SERVICES = [
   {
@@ -62,12 +59,10 @@ type Service = (typeof SERVICES)[number];
 
 export default function ServicesList() {
   const root = useRef<HTMLElement>(null);
-  const modalCard = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState<Service | null>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    return runLazyGsap(root.current, (gsap) => {
       gsap.from(".svc-row", {
         y: 40,
         autoAlpha: 0,
@@ -76,16 +71,12 @@ export default function ServicesList() {
         ease: "power3.out",
         scrollTrigger: { trigger: ".svc-rows", start: "top 85%" },
       });
-    }, root);
-    return () => ctx.revert();
+    });
   }, []);
 
-  // pop-in animation + escape-to-close while the box is open
+  // escape-to-close while the box is open (the pop-in is a CSS animation: .modal-pop)
   useEffect(() => {
     if (!open) return;
-    if (modalCard.current && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      gsap.from(modalCard.current, { y: 30, scale: 0.96, autoAlpha: 0, duration: 0.35, ease: "power3.out" });
-    }
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(null);
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -145,11 +136,10 @@ export default function ServicesList() {
           onClick={close}
         >
           <div
-            ref={modalCard}
             role="dialog"
             aria-modal="true"
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-lg rounded-2xl border border-line bg-card p-8 shadow-2xl md:p-10"
+            className="modal-pop relative w-full max-w-lg rounded-2xl border border-line bg-card p-8 shadow-2xl md:p-10"
           >
             <button
               type="button"

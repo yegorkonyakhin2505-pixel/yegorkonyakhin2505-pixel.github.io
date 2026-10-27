@@ -8,10 +8,10 @@ import { BRAND } from "@/lib/site";
 
 const PATH = "/blog";
 const TITLE = "Blog: Social Media, Video and AI Search for Dubai Businesses";
-const DESC = `Guides from ${BRAND} on what social media management costs in Dubai, how to choose a video content agency, real estate video formats and answer engine optimisation (AEO).`;
+const DESC = `Guides from ${BRAND}: what social media management costs in Dubai, how to choose a video content agency, real estate video formats and AEO.`;
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Social Media, Video & AI Search Guides for Dubai",
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: { title: TITLE, description: DESC, url: PATH },

@@ -11,10 +11,10 @@ import { AED, BRAND, PACKAGES } from "@/lib/site";
 const [starter, growth] = PACKAGES;
 const PATH = "/creators";
 const TITLE = "Content Production and Editing for Creators in Dubai";
-const DESC = `${BRAND} films and edits for influencers, podcasters and creators in Dubai: a month of posts from one shoot day, fast-cut montages, cinematic edits and behind-the-scenes, with captions built for retention. From ${AED(starter.price)} a month or per project.`;
+const DESC = `${BRAND} films and edits for influencers, podcasters and creators in Dubai: a month of posts from one shoot day, captioned for retention. From ${AED(starter.price)} a month.`;
 
 export const metadata: Metadata = {
-  title: "Video Editing and Content Production for Creators in Dubai",
+  title: "Video Editing & Production for Creators in Dubai",
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: { title: TITLE, description: DESC, url: PATH },

@@ -7,7 +7,7 @@ const TITLE = `Contact ${BRAND} in Dubai`;
 const DESC = `Email ${CONTACT_EMAIL}, call or WhatsApp ${PHONE_DISPLAY}. ${BRAND} is a Dubai social media and video marketing agency serving Dubai and the UAE.`;
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact Multify in Dubai: WhatsApp, Phone, Email",
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: { title: TITLE, description: DESC, url: PATH },

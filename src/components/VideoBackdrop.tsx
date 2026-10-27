@@ -1,31 +1,27 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { runLazyGsap, wantsMotion, whenIdle } from "@/lib/motion";
 
 export default function VideoBackdrop() {
   const root = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(false);
   // Only fetch the 2.3 MB showreel where it is actually visible and wanted: desktop widths,
   // no reduced-motion preference, no data-saver. Phones get the aurora backdrop only.
+  // Decided after idle so the showreel never competes with the first paint.
   const [allowVideo, setAllowVideo] = useState(false);
 
   useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const desktop = window.matchMedia("(min-width: 768px)").matches;
-    const nav = navigator as Navigator & { connection?: { saveData?: boolean } };
-    const saveData = Boolean(nav.connection?.saveData);
-    if (!reduced && desktop && !saveData) setAllowVideo(true);
+    const cancel = whenIdle(() => {
+      if (wantsMotion()) setAllowVideo(true);
+    });
+    return cancel;
   }, []);
 
   useEffect(() => {
     if (!ready) return;
-    const ctx = gsap.context(() => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      // gentle depth drift: the fixed video eases upward slightly as the page scrolls
+    // gentle depth drift: the fixed video eases upward slightly as the page scrolls
+    return runLazyGsap(root.current, (gsap) => {
       gsap.fromTo(
         ".vb-media",
         { yPercent: 4, scale: 1.08 },
@@ -36,24 +32,25 @@ export default function VideoBackdrop() {
           scrollTrigger: { trigger: document.body, start: "top top", end: "max", scrub: 1 },
         }
       );
-    }, root);
-    return () => ctx.revert();
+    });
   }, [ready]);
 
   return (
     <div ref={root} aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-      <video
-        className="vb-media h-full w-full object-cover will-change-transform"
-        style={{ opacity: ready ? "var(--video-op)" : 0, transition: "opacity 1s ease" }}
-        src={allowVideo ? "/showreel.mp4" : undefined}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        onCanPlay={() => setReady(true)}
-        onError={() => setReady(false)}
-      />
+      {allowVideo && (
+        <video
+          className="vb-media h-full w-full object-cover will-change-transform"
+          style={{ opacity: ready ? "var(--video-op)" : 0, transition: "opacity 1s ease" }}
+          src="/showreel.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          onCanPlay={() => setReady(true)}
+          onError={() => setReady(false)}
+        />
+      )}
       {/* legibility wash tied to theme background */}
       <div
         className="absolute inset-0"

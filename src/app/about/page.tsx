@@ -6,7 +6,7 @@ import { BRAND, FOUNDERS, FOUNDING_YEAR, LEGAL_NAME, LICENCE_AUTHORITY, LICENCE_
 
 const PATH = "/about";
 const TITLE = `About ${BRAND} — video and social media marketing agency in Dubai`;
-const DESC = `${BRAND} is a Dubai video and social media marketing agency founded in ${FOUNDING_YEAR} by Yegor Konyakhin and Asset Zhumabayev, trading under ${LEGAL_NAME}, DET trade licence ${LICENCE_NO}.`;
+const DESC = `${BRAND}: Dubai video and social media marketing agency founded in ${FOUNDING_YEAR} by Yegor Konyakhin and Asset Zhumabayev. ${LEGAL_NAME}, DET licence ${LICENCE_NO}.`;
 
 export const metadata: Metadata = {
   title: `About ${BRAND}`,

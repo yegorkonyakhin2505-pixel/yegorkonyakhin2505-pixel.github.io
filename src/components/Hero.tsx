@@ -1,16 +1,21 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
 import FilmTape from "@/components/FilmTape";
 import { BRAND } from "@/lib/site";
+import { loadGsap, wantsMotion, whenIdle } from "@/lib/motion";
 
 export default function Hero() {
   const root = useRef<HTMLElement>(null);
   const spot = useRef<HTMLDivElement>(null);
   const cta = useRef<HTMLAnchorElement>(null);
 
+  // The entrance animation is pure CSS (globals.css, desktop only), so the hero text is painted
+  // immediately on every device. JavaScript only adds the pointer spotlight and the magnetic
+  // button, on desktop, after the page is idle.
   useEffect(() => {
+    if (!wantsMotion()) return;
+
     const spotEl = spot.current;
     let raf = 0;
     let px = 0;
@@ -28,35 +33,37 @@ export default function Hero() {
     };
     window.addEventListener("pointermove", onMove);
 
-    const ctx = gsap.context(() => {
-      // Content is visible in the static HTML (good for LCP and crawlers);
-      // the reveal is an enhancement layered on top with `from` tweens.
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-      gsap.timeline({ defaults: { ease: "power4.out" } })
-        .from(".hero-line span", { yPercent: 100, duration: 1.2, stagger: 0.12, delay: 0.15 })
-        .from(".hero-fade", { autoAlpha: 0, y: 24, duration: 0.9, stagger: 0.1 }, "-=0.7");
-
-      const btn = cta.current;
-      if (btn) {
+    let cleanupMagnet: (() => void) | undefined;
+    const cancelIdle = whenIdle(() => {
+      loadGsap().then((gsap) => {
+        const btn = cta.current;
+        if (!gsap || !btn) return;
         const xTo = gsap.quickTo(btn, "x", { duration: 0.4, ease: "power3.out" });
         const yTo = gsap.quickTo(btn, "y", { duration: 0.4, ease: "power3.out" });
-        btn.addEventListener("mousemove", (e) => {
+        const move = (e: MouseEvent) => {
           const r = btn.getBoundingClientRect();
           xTo((e.clientX - (r.left + r.width / 2)) * 0.35);
           yTo((e.clientY - (r.top + r.height / 2)) * 0.35);
-        });
-        btn.addEventListener("mouseleave", () => {
+        };
+        const leave = () => {
           xTo(0);
           yTo(0);
-        });
-      }
-    }, root);
+        };
+        btn.addEventListener("mousemove", move);
+        btn.addEventListener("mouseleave", leave);
+        cleanupMagnet = () => {
+          btn.removeEventListener("mousemove", move);
+          btn.removeEventListener("mouseleave", leave);
+          gsap.set(btn, { clearProps: "x,y" });
+        };
+      });
+    });
 
     return () => {
       window.removeEventListener("pointermove", onMove);
       if (raf) cancelAnimationFrame(raf);
-      ctx.revert();
+      cancelIdle();
+      cleanupMagnet?.();
     };
   }, []);
 

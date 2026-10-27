@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Local SEO audit artifacts (gitignored) contain third-party report bundles.
+    "*-audit/**",
   ]),
 ]);
 

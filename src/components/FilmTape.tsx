@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { wantsMotion, whenIdle } from "@/lib/motion";
 
 /**
  * Infinite "video tape" hero background built from the team's real footage —
  * two rows of small muted clips (compressed 8s loops in /media/tape/) drifting
  * in opposite directions. On small screens the clips render as gradient frames
- * to keep scrolling smooth.
+ * to keep scrolling smooth; on desktop the clips are attached after the page is idle.
  */
 
 const ROW_A = ["barbershop", "bmw-club", "podcast", "car-rental", "clothing", "nightclub", "esports", "karaoke", "laptop", "phone", "real-estate"];
@@ -60,8 +61,11 @@ export default function FilmTape() {
   const [playVideo, setPlayVideo] = useState(false);
 
   useEffect(() => {
-    // videos only on larger screens — phones get the lightweight gradient frames
-    setPlayVideo(window.matchMedia("(min-width: 768px)").matches);
+    // videos only on larger screens, attached after idle — phones keep the gradient frames
+    const cancel = whenIdle(() => {
+      if (wantsMotion()) setPlayVideo(true);
+    });
+    return cancel;
   }, []);
 
   return (

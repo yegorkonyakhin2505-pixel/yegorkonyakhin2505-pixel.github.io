@@ -1,28 +1,14 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+// Fixed aurora backdrop: three blurred colour fields plus a mashrabiya lattice. The drift is a
+// CSS animation (globals.css, desktop only, transforms only), so this is a server component with
+// no JavaScript at all. Phones get the same static fields.
 
 // Mashrabiya lattice tile — used as a CSS mask so it inherits the theme's fg color
 const LATTICE =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Cg fill='none' stroke='%23fff' stroke-width='1'%3E%3Crect x='28' y='28' width='40' height='40'/%3E%3Crect x='28' y='28' width='40' height='40' transform='rotate(45 48 48)'/%3E%3Cpath d='M48 0v28M48 68v28M0 48h28M68 48h28M0 0l28 28M96 96L68 68M96 0L68 28M0 96l28-28'/%3E%3C/g%3E%3C/svg%3E\")";
 
 export default function Aurora() {
-  const root = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      // Blur is applied once per layer; only transforms animate (compositor-only)
-      gsap.to(".au-1", { xPercent: 22, yPercent: -14, scale: 1.15, duration: 26, yoyo: true, repeat: -1, ease: "sine.inOut" });
-      gsap.to(".au-2", { xPercent: -18, yPercent: 12, scale: 1.1, duration: 32, yoyo: true, repeat: -1, ease: "sine.inOut" });
-      gsap.to(".au-3", { xPercent: 14, yPercent: 18, scale: 1.22, duration: 38, yoyo: true, repeat: -1, ease: "sine.inOut" });
-    }, root);
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <div ref={root} aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+    <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       <div
         className="au-1 absolute -top-[15%] right-[-12%] h-[55vw] w-[55vw] rounded-full blur-[110px] will-change-transform"
         style={{ background: "radial-gradient(circle, var(--accent) 0%, transparent 70%)", opacity: "var(--aurora-1)" }}

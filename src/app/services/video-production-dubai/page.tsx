@@ -10,7 +10,7 @@ import { BRAND, SERVICE_PAGES } from "@/lib/site";
 const page = SERVICE_PAGES[1];
 const PATH = page.path;
 const TITLE = "Short-Form Video Production in Dubai — Reels, TikTok and Shorts";
-const DESC = `${BRAND} produces short-form video in Dubai: scripts and hooks, shoot days at your location, edits with captions and sound for Reels, TikTok and YouTube Shorts. 6 to 26 videos a month, from AED 5,000.`;
+const DESC = `${BRAND} films short-form video in Dubai: scripts, shoot days at your location, edits with captions for Reels, TikTok and Shorts. 6 to 26 videos a month from AED 5,000.`;
 
 export const metadata: Metadata = {
   title: "Short-Form Video Production in Dubai",

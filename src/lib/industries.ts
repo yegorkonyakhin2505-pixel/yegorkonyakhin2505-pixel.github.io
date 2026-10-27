@@ -31,9 +31,9 @@ export const INDUSTRIES: Industry[] = [
     path: "/industries/real-estate-marketing-dubai",
     name: "Real estate",
     title: "Real Estate Video and Social Media Marketing in Dubai",
-    metaTitle: "Real Estate Video & Social Media Marketing in Dubai",
+    metaTitle: "Real Estate Video & Social Marketing in Dubai",
     description:
-      "Property walkthroughs, agent talking-heads, area guides and listing reels for Dubai real estate agents and brokerages, filmed, edited and posted by Multify. Packages from AED 5,000 a month.",
+      "Listing walkthroughs, agent talking-heads and area guides for Dubai real estate agents and brokerages, filmed, edited and posted by Multify. From AED 5,000 a month.",
     eyebrow: "Industries · Real estate",
     lede:
       "Buyers and tenants in Dubai shortlist on Instagram and TikTok before they ever call an agent. We film the property, the agent and the area, cut it for sound-off viewing and post it on a schedule, so your listings and your name show up every week.",
@@ -80,9 +80,9 @@ export const INDUSTRIES: Industry[] = [
     path: "/industries/car-rental-marketing-dubai",
     name: "Car rental",
     title: "Social Media Marketing for Car Rental Companies in Dubai",
-    metaTitle: "Car Rental Social Media & Video Marketing in Dubai",
+    metaTitle: "Car Rental Social Media Marketing in Dubai",
     description:
-      "Fleet reels, driving shots, booking call-to-actions and tourist-season content for Dubai car rental companies, filmed and edited by Multify. Packages from AED 5,000 a month.",
+      "Fleet reels, driving shots and booking explainers for Dubai car rental companies, filmed and edited by Multify. Packages from AED 5,000 a month.",
     eyebrow: "Industries · Car rental",
     lede:
       "Dubai car rental is decided on Instagram and TikTok: a visitor searches, watches a few reels and messages the company whose cars looked best. We film your fleet properly, cut it for the platforms and post it on a schedule, so you are the company they message.",
@@ -130,9 +130,9 @@ export const INDUSTRIES: Industry[] = [
     path: "/industries/hospitality-nightlife-marketing-dubai",
     name: "Restaurants & nightlife",
     title: "Nightlife, Restaurant and Lounge Social Media Marketing in Dubai",
-    metaTitle: "Restaurant, Lounge & Nightlife Social Media Marketing in Dubai",
+    metaTitle: "Restaurant & Nightlife Marketing in Dubai",
     description:
-      "Atmosphere reels, event recaps, menu and room content for Dubai restaurants, lounges, clubs and karaoke venues, filmed at night by Multify's own team. Packages from AED 5,000 a month.",
+      "Atmosphere reels, event recaps and menu content for Dubai restaurants, lounges, clubs and karaoke venues, filmed at night by Multify. From AED 5,000 a month.",
     eyebrow: "Industries · Hospitality & nightlife",
     lede:
       "People choose where to go tonight from what they saw on Instagram this afternoon. We film your venue when it is actually alive, recap your events within days, and keep a week-by-week rhythm of content that fills tables and guest lists.",

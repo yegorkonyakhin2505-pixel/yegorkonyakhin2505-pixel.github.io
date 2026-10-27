@@ -1,15 +1,32 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BUSINESSES, INFLUENCERS, type Case } from "@/lib/work";
-
-gsap.registerPlugin(ScrollTrigger);
+import { runLazyGsap } from "@/lib/motion";
 
 function Tile({ c, i }: { c: Case; i: number }) {
+  const box = useRef<HTMLDivElement>(null);
   const vid = useRef<HTMLVideoElement>(null);
+  const [near, setNear] = useState(false);
   const [playing, setPlaying] = useState(false);
+
+  // The <video> (and therefore its poster) is only created once the tile is close to the
+  // viewport, so 15 posters and clips are not fetched on page load.
+  useEffect(() => {
+    const el = box.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setNear(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "320px 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   // Touch devices have no hover: play only while the tile is mostly on screen
   useEffect(() => {
@@ -29,7 +46,7 @@ function Tile({ c, i }: { c: Case; i: number }) {
     );
     io.observe(v);
     return () => io.disconnect();
-  }, []);
+  }, [near]);
 
   const play = () => {
     if (!window.matchMedia("(pointer: fine)").matches) return;
@@ -44,7 +61,7 @@ function Tile({ c, i }: { c: Case; i: number }) {
 
   return (
     <div className="work-card group" onMouseEnter={play} onMouseLeave={pause}>
-      <div className="relative aspect-[9/16] overflow-hidden rounded-xl bg-card">
+      <div ref={box} className="relative aspect-[9/16] overflow-hidden rounded-xl bg-card">
         <div
           className={`absolute inset-0 transition-all duration-500 ease-out group-hover:scale-[1.04] ${
             playing ? "" : "brightness-[.85]"
@@ -52,18 +69,20 @@ function Tile({ c, i }: { c: Case; i: number }) {
           style={{ background: c.art }}
         >
           {/* still poster by default; video plays on hover (desktop) / in view (mobile) */}
-          <video
-            ref={vid}
-            className="h-full w-full object-cover"
-            src={`/media/work/${c.slug}.mp4`}
-            poster={`/media/work/${c.slug}-poster.jpg`}
-            title={`${c.title} — ${c.tag}`}
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            onError={(e) => ((e.target as HTMLVideoElement).style.display = "none")}
-          />
+          {near && (
+            <video
+              ref={vid}
+              className="h-full w-full object-cover"
+              src={`/media/work/${c.slug}.mp4`}
+              poster={`/media/work/${c.slug}-poster.jpg`}
+              title={`${c.title} — ${c.tag}`}
+              muted
+              loop
+              playsInline
+              preload="none"
+              onError={(e) => ((e.target as HTMLVideoElement).style.display = "none")}
+            />
+          )}
         </div>
         <span
           className={`absolute bottom-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-black/50 text-[10px] text-white/90 backdrop-blur-sm transition-opacity duration-300 ${
@@ -91,8 +110,7 @@ export default function WorkGrid() {
   const root = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    return runLazyGsap(root.current, (gsap) => {
       gsap.utils.toArray<HTMLElement>(".work-heading").forEach((h) => {
         gsap.from(h, {
           y: 70,
@@ -112,9 +130,7 @@ export default function WorkGrid() {
           scrollTrigger: { trigger: card, start: "top 92%" },
         });
       });
-    }, root);
-
-    return () => ctx.revert();
+    });
   }, []);
 
   return (

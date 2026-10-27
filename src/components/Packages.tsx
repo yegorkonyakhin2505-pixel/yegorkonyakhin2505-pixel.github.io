@@ -2,10 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { runLazyGsap } from "@/lib/motion";
 
 const TIERS = [
   {
@@ -54,9 +51,7 @@ export default function Packages() {
   const root = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
+    return runLazyGsap(root.current, (gsap) => {
       gsap.from(".pkg-heading", {
         y: 90,
         autoAlpha: 0,
@@ -72,9 +67,7 @@ export default function Packages() {
         ease: "power3.out",
         scrollTrigger: { trigger: ".pkg-grid", start: "top 82%" },
       });
-    }, root);
-
-    return () => ctx.revert();
+    });
   }, []);
 
   return (

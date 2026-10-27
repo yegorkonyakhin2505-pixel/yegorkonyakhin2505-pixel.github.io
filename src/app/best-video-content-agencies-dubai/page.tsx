@@ -10,8 +10,7 @@ import { AED, BRAND, PACKAGES, SITE_URL } from "@/lib/site";
 const [starter, growth, scale] = PACKAGES;
 const PATH = "/best-video-content-agencies-dubai";
 const TITLE = "Best Video Content Agencies in Dubai (2026): An Honest Comparison";
-const DESC =
-  "Eleven Dubai agencies that film and edit short-form video and social content, compared on what they publish: specialities, starting prices, verified reviews and who each one suits. Includes us, labelled as such. Checked October 2026.";
+const DESC = "Eleven Dubai agencies that film and edit short-form video and social content, compared on published prices, specialities and verified reviews. Includes us, labelled. Oct 2026.";
 const CHECKED = "October 2026";
 
 type Agency = {
@@ -74,7 +73,7 @@ function listSchema() {
 }
 
 export const metadata: Metadata = {
-  title: "Best Video Content Agencies in Dubai (2026 Comparison)",
+  title: "Best Video Content Agencies in Dubai (2026)",
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: { title: TITLE, description: DESC, url: PATH, type: "article" },
@@ -148,13 +147,13 @@ export default function BestAgenciesPage() {
       <ol>
         <li>Decide what you are buying: monthly content, creator ads or a film. Shortlist from the matching group above.</li>
         <li>Divide the monthly fee by the number of finished videos. Cost per video is the honest comparison.</li>
-        <li>Ask for last month's work for three current clients, not the showreel.</li>
+        <li>Ask for last month&apos;s work for three current clients, not the showreel.</li>
         <li>Confirm who films, who writes the scripts, whether posting is included and who owns the files.</li>
       </ol>
       <p>The full checklist is in <Link href="/blog/how-to-choose-video-content-agency-dubai">How to choose a video content agency in Dubai</Link>, and what the market charges is in <Link href="/blog/social-media-management-cost-dubai">What social media management costs in Dubai</Link>.</p>
 
       <h2>Method and disclosure</h2>
-      <p>We looked for Dubai-based companies whose core work is short-form video and social content for businesses, read each agency's own website and, where available, its Clutch or Trustpilot profile, and recorded what they publish. We did not rank them, we did not accept payment for placement, and we left out companies we could not verify. {BRAND} is included because it meets the criteria; we have labelled it as ours wherever it appears. If you run one of these agencies and something here is out of date, email us and we will correct it.</p>
+      <p>We looked for Dubai-based companies whose core work is short-form video and social content for businesses, read each agency&apos;s own website and, where available, its Clutch or Trustpilot profile, and recorded what they publish. We did not rank them, we did not accept payment for placement, and we left out companies we could not verify. {BRAND} is included because it meets the criteria; we have labelled it as ours wherever it appears. If you run one of these agencies and something here is out of date, email us and we will correct it.</p>
 
       <Faq items={FAQS} path={PATH} title="Comparison questions" />
       <Cta text={`If a filmed monthly package is what you need, send ${BRAND} your Instagram and what you sell. We reply with the package that fits and a first shoot date.`} />

@@ -24,6 +24,12 @@ const TITLE = `${BRAND} — Social Media & Video Marketing Agency in Dubai`;
 // The GitHub Pages mirror is built with NEXT_PUBLIC_NOINDEX=1 so only multify.ae is indexed.
 const NOINDEX = process.env.NEXT_PUBLIC_NOINDEX === "1";
 
+// Chrome prerenders the most-visited next pages when a link is hovered or comes into view,
+// so the top paths open instantly. Other browsers ignore the block.
+const SPECULATION_RULES = JSON.stringify({
+  prerender: [{ where: { href_matches: ["/pricing", "/contact", "/about", "/services/*", "/industries/*"] }, eagerness: "moderate" }],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: TITLE, template: `%s | ${BRAND}` },
@@ -52,6 +58,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
       { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
       { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
     ],
@@ -68,6 +75,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${archivo.variable} ${inter.variable} antialiased`}>
       <body className="grain min-h-full">
         <JsonLd data={buildSiteGraph()} />
+        <script type="speculationrules" dangerouslySetInnerHTML={{ __html: SPECULATION_RULES }} />
         <SmoothScroll />
         <Aurora />
         <VideoBackdrop />
