@@ -5,7 +5,7 @@ import Faq from "@/components/Faq";
 import Cta from "@/components/Cta";
 import { AI_FAQS } from "@/lib/faqs";
 import { buildServicePage } from "@/lib/schema";
-import { BRAND, SERVICE_PAGES, SITE_HOST } from "@/lib/site";
+import { BRAND, CLICKCOLLAB_URL, SERVICE_PAGES, SITE_HOST } from "@/lib/site";
 
 const page = SERVICE_PAGES[2];
 const PATH = page.path;
@@ -39,6 +39,7 @@ export default function AiPage() {
         <li><strong>Content and reporting tools:</strong> drafts, captions, summaries and dashboards generated from your own data.</li>
         <li><strong>Internal assistants:</strong> a private assistant trained on your documents, prices and processes for your team.</li>
         <li><strong>Client portals:</strong> the portal our own clients use for calendars, approvals and weekly numbers is an example of what we build.</li>
+        <li><strong>Our own product:</strong> <a href={CLICKCOLLAB_URL}>ClickCollab</a>, a content-ideas tool for creators founded by our co-founder Yegor, runs on the same stack we use for client builds.</li>
       </ul>
 
       <h2>Websites that load fast and rank</h2>

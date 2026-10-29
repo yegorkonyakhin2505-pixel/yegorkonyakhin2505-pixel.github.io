@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageShell from "@/components/PageShell";
 import Cta from "@/components/Cta";
-import { BRAND, FOUNDERS, FOUNDING_YEAR, LEGAL_NAME, LICENCE_AUTHORITY, LICENCE_NO } from "@/lib/site";
+import { BRAND, CLICKCOLLAB_URL, FOUNDERS, FOUNDING_YEAR, LEGAL_NAME, LICENCE_AUTHORITY, LICENCE_NO } from "@/lib/site";
 
 const PATH = "/about";
 const TITLE = `About ${BRAND} — video and social media marketing agency in Dubai`;
@@ -37,11 +37,12 @@ export default function AboutPage() {
       </ul>
 
       <h2>Founders</h2>
+      <p>{BRAND} is owned and run by its two co-founders. Both hold the CEO title: Yegor on the marketing and technology side, Asset on production.</p>
       <div className="box">
-        <h3 style={{ marginTop: 0 }}>{yegor.name}</h3>
-        <p>{yegor.role}. Yegor runs strategy, client accounts and the social media side: content calendars, captions, posting, reporting and the client portal. He also builds the AI and web work.</p>
-        <h3>{asset.name}</h3>
-        <p style={{ marginBottom: 0 }}>{asset.role}. Asset films and edits everything we publish: shoot days, B-roll, captions, sound design and colour. The footage on this site is his work with our team.</p>
+        <h3 style={{ marginTop: 0 }}>{yegor.name} <span className="text-muted">— {yegor.role}</span></h3>
+        <p>Yegor runs strategy, client accounts and the social media side: content calendars, captions, posting, reporting and the client portal. He also builds the AI and web work, and is the founder of <a href={CLICKCOLLAB_URL}>ClickCollab</a>, a content-ideas tool for creators.</p>
+        <h3>{asset.name} <span className="text-muted">— {asset.role}</span></h3>
+        <p style={{ marginBottom: 0 }}>Asset films and edits everything we publish: shoot days, B-roll, captions, sound design and colour. The footage on this site is his work with our team.</p>
       </div>
 
       <h2>How we work</h2>

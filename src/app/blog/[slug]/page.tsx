@@ -73,7 +73,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
       trail={[{ name: "Blog", path: "/blog" }, { name: post.title, path: post.path }]}
       eyebrow={`Blog · ${fmt(post.published)} · ${post.readingMinutes} min read`}
       title={post.title}
-      lede={<>{post.description} <span style={{ display: "block", marginTop: "1rem", fontSize: "0.9em" }}>By <Link href="/about">{author.name}</Link>, {author.role.replace("Co-founder — ", "co-founder, ")}.{post.updated !== post.published ? ` Updated ${fmt(post.updated)}.` : ""}</span></>}
+      lede={<>{post.description} <span style={{ display: "block", marginTop: "1rem", fontSize: "0.9em" }}>By <Link href="/about">{author.name}</Link>, {author.role.replace("Co-founder", "co-founder")}.{post.updated !== post.published ? ` Updated ${fmt(post.updated)}.` : ""}</span></>}
       extraJsonLd={[buildBlogPosting(post)]}
     >
       {post.blocks.map((b, i) => (

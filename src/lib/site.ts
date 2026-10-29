@@ -31,9 +31,27 @@ export const LINKEDIN_URL = "";
 export const TIKTOK_URL = "";
 export const SOCIAL_PROFILES = [INSTAGRAM_URL, LINKEDIN_URL, TIKTOK_URL].filter(Boolean);
 
+// Yegor's own product. Linked from About, the AI platforms page and his Person node so
+// search and AI engines connect Multify, ClickCollab and the person behind both.
+export const CLICKCOLLAB_URL = "https://www.clickcollab.net";
+
+// Both co-founders hold the CEO title (Yegor's decision, 29 Oct 2026). `focus` is the
+// plain-language split of who does what; `sameAs` ties the Person node to profiles elsewhere.
 export const FOUNDERS = [
-  { name: "Yegor Konyakhin", role: "Co-founder — strategy, accounts and social media", id: "founder-yegor" },
-  { name: "Asset Zhumabayev", role: "Co-founder — filming and editing", id: "founder-asset" },
+  {
+    name: "Yegor Konyakhin",
+    role: "Co-founder & CEO",
+    focus: "strategy, client accounts, social media, AI and web builds",
+    id: "founder-yegor",
+    sameAs: [`${CLICKCOLLAB_URL}/about`],
+  },
+  {
+    name: "Asset Zhumabayev",
+    role: "Co-founder & CEO",
+    focus: "filming and editing",
+    id: "founder-asset",
+    sameAs: [] as string[],
+  },
 ];
 
 export const TAGLINE = "We make brands impossible to ignore.";

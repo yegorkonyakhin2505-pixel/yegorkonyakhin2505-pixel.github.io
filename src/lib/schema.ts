@@ -105,9 +105,11 @@ export function buildSiteGraph() {
         "@id": ID.person(f.id),
         name: f.name,
         jobTitle: f.role,
+        description: `${f.role} of ${BRAND}: ${f.focus}.`,
         worksFor: { "@id": ID.org },
         workLocation: { "@type": "City", name: "Dubai" },
         url: `${SITE_URL}/about`,
+        ...(f.sameAs.length ? { sameAs: f.sameAs } : {}),
       })),
       {
         "@type": "WebSite",
