@@ -6,12 +6,11 @@ import Cta from "@/components/Cta";
 import type { Faq as FaqItem } from "@/lib/faqs";
 import { INFLUENCERS } from "@/lib/work";
 import { buildCreatorsService } from "@/lib/schema";
-import { AED, BRAND, PACKAGES } from "@/lib/site";
+import { AED, BRAND, PRICE_FROM } from "@/lib/site";
 
-const [starter, growth] = PACKAGES;
 const PATH = "/creators";
 const TITLE = "Content Production and Editing for Creators in Dubai";
-const DESC = `${BRAND} films and edits for influencers, podcasters and creators in Dubai: a month of posts from one shoot day. From ${AED(starter.price)} a month.`;
+const DESC = `${BRAND} films and edits for influencers, podcasters and creators in Dubai: a month of posts from one shoot day. From ${AED(PRICE_FROM)} a month.`;
 
 export const metadata: Metadata = {
   title: "Video Editing & Production for Creators in Dubai",
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 const FAQS: FaqItem[] = [
-  { q: "How much does a video editor for influencers cost in Dubai?", a: `With ${BRAND}, a creator content system starts at ${AED(starter.price)} a month for 6 filmed and edited videos, or ${AED(growth.price)} for 3 a week. Editing-only (you send footage, we cut and caption) is quoted per video or per month depending on volume.` },
+  { q: "How much does a video editor for influencers cost in Dubai?", a: `With ${BRAND}, a creator content system starts from ${AED(PRICE_FROM)} a month for 6 filmed and edited videos; 3 videos a week is quoted per creator after five quick questions on the pricing page. Editing-only (you send footage, we cut and caption) is quoted per video or per month depending on volume.` },
   { q: "Can you edit footage I film myself?", a: "Yes. Send raw phone or camera footage through a shared folder; we cut, caption, colour and deliver vertical posts with a hook in the first two seconds. Turnaround is agreed per package." },
   { q: "Do you film creators on location?", a: "Yes. A shoot day in Dubai covers a gym session, a day in the life or a set of talking-heads and usually produces a month of posts. We plan the shot list with you beforehand." },
   { q: "Do I need a permit to post paid brand content in the UAE?", a: "Paid promotion by creators follows UAE Media Council rules, including the advertiser permit requirement and clear labelling of paid content. Confirm the current rules before publishing sponsored posts; this is a summary, not legal advice." },
@@ -78,7 +77,7 @@ export default function CreatorsPage() {
       <div className="box"><p>This is a summary of the rules as we understand them, not legal advice. Confirm current UAE Media Council requirements before publishing sponsored posts.</p></div>
 
       <h2>Pricing</h2>
-      <p>Filming plus editing runs on the same packages as our business clients: {AED(starter.price)} a month for 6 videos (Starter) or {AED(growth.price)} for 3 a week (Growth), with scripts, shoot days, editing and a monthly report included. Editing-only is quoted per video or per month depending on volume. <Link href="/pricing">See the packages</Link>.</p>
+      <p>Filming plus editing runs on the same packages as our business clients: from {AED(PRICE_FROM)} a month for 6 videos (Starter), or 3 a week (Growth), with scripts, shoot days, editing and a monthly report included. Editing-only is quoted per video or per month depending on volume. <Link href="/pricing">Find your price</Link>.</p>
 
       <Faq items={FAQS} path={PATH} title="Creator questions" />
       <Cta text="Send us your handle and what you post. We reply with a content system, a price and a first shoot or edit date." />

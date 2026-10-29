@@ -3,48 +3,21 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { runLazyGsap } from "@/lib/motion";
+import PriceFinder from "@/components/PriceFinder";
+import { AED, PACKAGES, PRICE_FROM } from "@/lib/site";
 
-const TIERS = [
-  {
-    name: "Starter",
-    tagline: "Get consistent",
-    price: "AED 5,000",
-    popular: false,
-    features: [
-      "6 videos filmed a month",
-      "Filmed by our team",
-      "Scripts written for every video",
-      "Professionally edited",
-      "End-of-month analytics report",
-    ],
-  },
-  {
-    name: "Growth",
-    tagline: "Level up",
-    price: "AED 8,000",
-    popular: true,
-    features: [
-      "3 videos every week",
-      "Filmed, scripted & edited",
-      "Access to AI-generated content",
-      "Uploading & scheduling handled",
-      "Monthly strategy call",
-      "End-of-month analytics report",
-    ],
-  },
-  {
-    name: "Scale",
-    tagline: "Own your market",
-    price: "AED 17,000",
-    popular: false,
-    features: [
-      "6 videos every week",
-      "Everything in Starter & Growth",
-      "In-depth social media analysis",
-      "Niche & competitor analysis",
-      "Full strategy for your business",
-    ],
-  },
+/**
+ * Homepage pricing section. Exact prices are not published (decision 29 Oct 2026): the
+ * section leads with the "Find your price" quiz and keeps one public anchor, the entry
+ * price. The three package names and their video volume stay visible for orientation.
+ */
+
+const INCLUDED = [
+  "Filmed at your location by our team",
+  "A script and hook for every video",
+  "Editing with captions and sound for sound-off viewing",
+  "End-of-month analytics report",
+  "Monthly, cancel anytime, no VAT added",
 ];
 
 export default function Packages() {
@@ -59,8 +32,8 @@ export default function Packages() {
         ease: "power4.out",
         scrollTrigger: { trigger: ".pkg-heading", start: "top 85%" },
       });
-      gsap.from(".pkg-card", {
-        y: 70,
+      gsap.from(".pkg-col", {
+        y: 60,
         autoAlpha: 0,
         duration: 0.9,
         stagger: 0.12,
@@ -72,89 +45,60 @@ export default function Packages() {
 
   return (
     <section id="packages" ref={root} className="border-t border-line px-6 py-28 md:px-10 md:py-40">
-      <div className="pkg-heading mb-16 flex flex-wrap items-end justify-between gap-6 md:mb-20">
+      <div className="pkg-heading mb-14 flex flex-wrap items-end justify-between gap-6 md:mb-20">
         <h2 className="display text-6xl md:text-[6vw]">
-          Pick your<br />
-          <span className="text-accent">package</span>
+          What would it<br />
+          <span className="text-accent">cost you?</span>
         </h2>
         <p className="max-w-xs text-base leading-relaxed text-muted">
-          Every tier: we film, we script, we edit, we report. Cancel anytime.{" "}
+          Packages from {AED(PRICE_FROM)} a month. Five quick questions and we reply within 1 working day with the package and the price that fit your business.{" "}
           <Link href="/pricing" className="text-fg underline underline-offset-4 hover:text-accent">
-            Full pricing and FAQ →
+            What is in a package →
           </Link>
         </p>
       </div>
 
-      <div className="pkg-grid grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {TIERS.map((t) => (
-          <div
-            key={t.name}
-            className={`pkg-card relative flex flex-col rounded-3xl border p-8 transition-colors md:p-10 ${
-              t.popular ? "border-accent bg-card" : "border-line bg-card/50"
-            }`}
-          >
-            {t.popular && (
-              <span className="absolute -top-3.5 left-8 rounded-full bg-accent px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-fg">
-                Most popular
-              </span>
-            )}
-            <p className="text-sm uppercase tracking-[0.25em] text-muted">{t.tagline}</p>
-            <h3 className="display mt-3 text-4xl">{t.name}</h3>
-            <p className="mt-6 text-3xl font-semibold">
-              {t.price}
-              <span className="ml-1 text-base font-normal text-muted">/ month</span>
-            </p>
-            <ul className="mt-8 flex-1 space-y-3">
-              {t.features.map((f) => (
+      <div className="pkg-grid grid gap-6 lg:grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)]">
+        <div className="pkg-col" id="quiz">
+          <PriceFinder />
+        </div>
+
+        <aside className="pkg-col flex flex-col gap-6">
+          <div className="rounded-2xl border border-line bg-card/50 p-6 md:p-8">
+            <p className="text-xs uppercase tracking-[0.25em] text-muted">Three packages, one price each</p>
+            <ul className="mt-4 divide-y divide-line">
+              {PACKAGES.map((p) => (
+                <li key={p.slug} className="flex items-baseline justify-between gap-4 py-3.5">
+                  <span className="display text-2xl">
+                    {p.name}
+                    {"popular" in p && p.popular && (
+                      <span className="ml-2 align-middle rounded-full bg-accent px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent-fg">
+                        Popular
+                      </span>
+                    )}
+                  </span>
+                  <span className="text-sm text-muted">{p.perWeek}</span>
+                </li>
+              ))}
+              <li className="flex items-baseline justify-between gap-4 py-3.5">
+                <span className="display text-2xl">AI platforms</span>
+                <span className="text-sm text-muted">quoted per project</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-line bg-card/50 p-6 md:p-8">
+            <p className="text-xs uppercase tracking-[0.25em] text-muted">Every package includes</p>
+            <ul className="mt-4 space-y-3">
+              {INCLUDED.map((f) => (
                 <li key={f} className="flex items-start gap-3 text-base">
                   <span className="mt-0.5 text-accent">✦</span>
                   {f}
                 </li>
               ))}
             </ul>
-            <a
-              href="#contact"
-              className={`mt-10 rounded-full px-6 py-3.5 text-center text-sm font-semibold uppercase tracking-wider transition-colors ${
-                t.popular
-                  ? "bg-accent text-accent-fg hover:opacity-90"
-                  : "border border-line hover:bg-accent hover:text-accent-fg hover:border-transparent"
-              }`}
-            >
-              Enquire
-            </a>
           </div>
-        ))}
-
-        {/* AI platforms — full card, custom pricing */}
-        <div className="pkg-card relative flex flex-col rounded-3xl border border-line bg-card/50 p-8 transition-colors md:p-10">
-          <p className="text-sm uppercase tracking-[0.25em] text-muted">Built & integrated</p>
-          <h3 className="display mt-3 text-4xl">AI Platforms</h3>
-          <p className="mt-6 text-3xl font-semibold">
-            Custom
-            <span className="ml-1 text-base font-normal text-muted">/ per project</span>
-          </p>
-          <ul className="mt-8 flex-1 space-y-3">
-            {[
-              "AI platform development & integration",
-              "Custom AI agents & automations",
-              "Website development",
-              "Company email setup",
-              "SEO & AEO",
-              "Full handover — it's yours",
-            ].map((f) => (
-              <li key={f} className="flex items-start gap-3 text-base">
-                <span className="mt-0.5 text-accent">✦</span>
-                {f}
-              </li>
-            ))}
-          </ul>
-          <a
-            href="#contact"
-            className="mt-10 rounded-full border border-line px-6 py-3.5 text-center text-sm font-semibold uppercase tracking-wider transition-colors hover:bg-accent hover:text-accent-fg hover:border-transparent"
-          >
-            Enquire
-          </a>
-        </div>
+        </aside>
       </div>
     </section>
   );

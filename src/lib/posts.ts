@@ -1,9 +1,8 @@
 // src/lib/posts.ts
 // Blog posts as structured blocks. Rendered by app/blog/[slug] and used for BlogPosting schema.
 // Facts about Multify come from site.ts; market ranges are labelled as indicative in the text.
-import { AED, PACKAGES } from "@/lib/site";
+import { AED, PRICE_FROM } from "@/lib/site";
 
-const [starter, growth, scale] = PACKAGES;
 const perVideo = (price: number, videos: number) => AED(Math.round(price / videos));
 
 export type Block =
@@ -62,15 +61,15 @@ export const POSTS: Post[] = [
         "Platforms. Each extra platform means extra formats and extra posting time.",
         "Reporting. A real monthly report with numbers and next steps, versus a screenshot of followers.",
       ] },
-      { type: "h2", text: "Our published prices" },
-      { type: "p", text: "Multify publishes its packages so you can compare them against any quote. All three include filming at your location, a script for every video, editing and an end-of-month report. There is no long-term contract and no VAT is added at present." },
+      { type: "h2", text: "Our prices" },
+      { type: "p", text: "Multify quotes each business after five questions (industry, videos a week, what you need, audience, start date), because those are the things that move the price. All three packages include filming at your location, a script for every video, editing and an end-of-month report. There is no long-term contract and no VAT is added at present." },
       { type: "stats", items: [
-        { label: `Starter · ${starter.perWeek}`, value: `${AED(starter.price)} / month` },
-        { label: `Growth · ${growth.perWeek}`, value: `${AED(growth.price)} / month` },
-        { label: `Scale · ${scale.perWeek}`, value: `${AED(scale.price)} / month` },
-        { label: "Cost per finished video", value: `${perVideo(starter.price, 6)} (Starter) · ${perVideo(growth.price, 13)} (Growth) · ${perVideo(scale.price, 26)} (Scale)` },
+        { label: "Starter · 6 videos a month", value: `from ${AED(PRICE_FROM)} / month` },
+        { label: "Growth · 3 videos a week", value: "quoted per business" },
+        { label: "Scale · 6 videos a week", value: "quoted per business" },
+        { label: "Cost per finished video", value: `from about ${perVideo(PRICE_FROM, 6)} on Starter, less per video on Growth and Scale` },
       ] },
-      { type: "link", text: "Full comparison, what is and isn't included, and ten pricing questions answered:", href: "/pricing", label: "See the pricing page" },
+      { type: "link", text: "Five questions, one price for your business, plus what is and isn't included:", href: "/pricing", label: "Find your price" },
       { type: "h2", text: "Hidden costs to check before you sign" },
       { type: "ul", items: [
         "Ad spend. Boosting and campaigns are paid to Meta, TikTok or Google on top of any management fee. Ask whether the fee includes managing ads, and confirm the spend is yours to control.",
@@ -125,7 +124,7 @@ export const POSTS: Post[] = [
         "Accounts created in the agency's name. You should be the owner; they should be a collaborator.",
       ] },
       { type: "h2", text: "What a fair quote looks like" },
-      { type: "p", text: `A clear monthly fee, a video count, the number of shoot days, what is posted and where, and the report you get. For reference, Multify's packages are ${AED(starter.price)} for 6 filmed videos a month, ${AED(growth.price)} for 3 a week and ${AED(scale.price)} for 6 a week, filming, scripts, editing and a monthly report included, cancellable monthly.` },
+      { type: "p", text: `A clear monthly fee, a video count, the number of shoot days, what is posted and where, and the report you get. For reference, Multify's packages start from ${AED(PRICE_FROM)} a month for 6 filmed videos; 3 and 6 videos a week are quoted per business after five questions on the pricing page. Filming, scripts, editing and a monthly report are included, cancellable monthly.` },
       { type: "link", text: "The full package comparison:", href: "/pricing", label: "Pricing and FAQ" },
       { type: "link", text: "Eleven Dubai agencies compared on what they publish, including us:", href: "/best-video-content-agencies-dubai", label: "Best video content agencies in Dubai" },
       { type: "h2", text: "Run a 30-day test" },

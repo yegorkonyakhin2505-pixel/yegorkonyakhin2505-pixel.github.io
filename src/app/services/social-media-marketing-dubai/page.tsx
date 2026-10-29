@@ -59,12 +59,12 @@ export default function SocialPage() {
       <table>
         <thead><tr><th>Package</th><th>You get</th><th>Best for</th></tr></thead>
         <tbody>
-          <tr><td>Starter · AED 5,000</td><td>6 filmed, scripted and edited videos a month, monthly report. You post.</td><td>Consistent video on your feed, posting kept in-house</td></tr>
-          <tr><td>Growth · AED 8,000</td><td>3 videos a week, posting and scheduling handled, AI content access, monthly strategy call and report.</td><td>Accounts run for you, three posts a week</td></tr>
-          <tr><td>Scale · AED 17,000</td><td>6 videos a week, everything in Growth, social media analysis, niche and competitor study, full strategy.</td><td>Social as a main sales channel</td></tr>
+          <tr><td>Starter</td><td>6 filmed, scripted and edited videos a month, monthly report. You post.</td><td>Consistent video on your feed, posting kept in-house</td></tr>
+          <tr><td>Growth</td><td>3 videos a week, posting and scheduling handled, AI content access, monthly strategy call and report.</td><td>Accounts run for you, three posts a week</td></tr>
+          <tr><td>Scale</td><td>6 videos a week, everything in Growth, social media analysis, niche and competitor study, full strategy.</td><td>Social as a main sales channel</td></tr>
         </tbody>
       </table>
-      <p>Full comparison and billing terms on the <Link href="/pricing">pricing page</Link>.</p>
+      <p>Packages start from AED 5,000 a month. The exact price is quoted for your business: answer five questions on the <Link href="/pricing">pricing page</Link> and we reply within 1 working day.</p>
 
       <h2>What you see every week</h2>
       <p>Every client gets a login to the {BRAND} client portal: the month&apos;s calendar, what is scheduled, what went live and the weekly numbers. No waiting for a monthly deck to know what is happening.</p>

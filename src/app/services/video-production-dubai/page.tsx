@@ -64,12 +64,12 @@ export default function VideoPage() {
       <table>
         <thead><tr><th>Package</th><th>Videos</th><th>Price</th></tr></thead>
         <tbody>
-          <tr><td>Starter</td><td>6 a month</td><td>AED 5,000 / month</td></tr>
-          <tr><td>Growth</td><td>3 a week (about 13 a month)</td><td>AED 8,000 / month</td></tr>
-          <tr><td>Scale</td><td>6 a week (about 26 a month)</td><td>AED 17,000 / month</td></tr>
+          <tr><td>Starter</td><td>6 a month</td><td>from AED 5,000 / month</td></tr>
+          <tr><td>Growth</td><td>3 a week (about 13 a month)</td><td>quoted per business</td></tr>
+          <tr><td>Scale</td><td>6 a week (about 26 a month)</td><td>quoted per business</td></tr>
         </tbody>
       </table>
-      <p>Every package includes filming, scripts, editing and a monthly report. Event films, podcast series and longer brand films are quoted per project. See the <Link href="/pricing">full comparison</Link>.</p>
+      <p>Every package includes filming, scripts, editing and a monthly report. Answer five questions on the <Link href="/pricing">pricing page</Link> and we reply within 1 working day with your price. Event films, podcast series and longer brand films are quoted per project.</p>
 
       <Faq items={VIDEO_FAQS} path={PATH} title="Video production questions" />
       <Cta text="Send us your Instagram and what you sell. We reply with a first shoot date and the package that fits." />

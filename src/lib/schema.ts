@@ -12,6 +12,7 @@ import {
   LICENCE_NO,
   media,
   PACKAGES,
+  PRICE_FROM,
   PHONE_E164,
   SERVICE_PAGES,
   SITE_URL,
@@ -58,9 +59,10 @@ const SERVICES = [
     description: "Search engine optimisation and answer engine optimisation so your business is found in Google and AI assistants." },
 ] as const;
 
-const monthly = (price: number) => ({
+// Packages are quoted per business; only the entry price is public (29 Oct 2026).
+const fromMonthly = () => ({
   "@type": "UnitPriceSpecification",
-  price,
+  minPrice: PRICE_FROM,
   priceCurrency: "AED",
   unitCode: "MON",
   referenceQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "MON" },
@@ -88,7 +90,7 @@ export function buildSiteGraph() {
         identifier: { "@type": "PropertyValue", propertyID: "Dubai DET Trade Licence", value: LICENCE_NO },
         address: { "@type": "PostalAddress", addressLocality: "Dubai", addressRegion: "Dubai", addressCountry: "AE" },
         areaServed: AREA_SERVED,
-        priceRange: "AED 5,000 - AED 17,000+ per month",
+        priceRange: "From AED 5,000 per month",
         currenciesAccepted: "AED",
         knowsLanguage: ["en", "ru"],
         knowsAbout: ["Social media marketing", "Video production", "Content creation", "Scriptwriting", "Video editing", "Creator content", "Real estate marketing", "Car rental marketing", "Hospitality marketing", "AI platform development", "Website development", "Search engine optimisation", "Answer engine optimisation"],
@@ -141,9 +143,8 @@ export function buildSiteGraph() {
             name: `${p.name} package`,
             description: p.description,
             url: `${SITE_URL}/pricing#${p.slug}`,
-            price: p.price,
             priceCurrency: "AED",
-            priceSpecification: monthly(p.price),
+            ...(p.slug === "starter" ? { priceSpecification: fromMonthly() } : {}),
             availability: "https://schema.org/InStock",
             seller: { "@id": ID.org },
             areaServed: AREA_SERVED,

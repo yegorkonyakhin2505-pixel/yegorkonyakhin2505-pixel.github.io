@@ -46,7 +46,7 @@ export default function Footer() {
               </li>
             ))}
             <li><Link href="/creators" className={link}>For creators</Link></li>
-            <li><Link href="/pricing" className={link}>Packages and prices</Link></li>
+            <li><Link href="/pricing" className={link}>Pricing</Link></li>
           </ul>
         </div>
         <div>

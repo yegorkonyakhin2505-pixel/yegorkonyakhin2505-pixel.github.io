@@ -67,7 +67,6 @@ export const PACKAGES = [
     slug: "starter",
     name: "Starter",
     tagline: "Get consistent",
-    price: 5000,
     perWeek: "6 videos a month",
     features: ["6 videos filmed a month", "Filmed by our team", "Scripts written for every video", "Professionally edited", "End-of-month analytics report"],
     description: "6 videos filmed a month by our team, scripted and professionally edited, with an end-of-month analytics report.",
@@ -76,7 +75,6 @@ export const PACKAGES = [
     slug: "growth",
     name: "Growth",
     tagline: "Level up",
-    price: 8000,
     perWeek: "3 videos a week",
     popular: true,
     features: ["3 videos every week", "Filmed, scripted & edited", "Access to AI-generated content", "Uploading & scheduling handled", "Monthly strategy call", "End-of-month analytics report"],
@@ -86,7 +84,6 @@ export const PACKAGES = [
     slug: "scale",
     name: "Scale",
     tagline: "Own your market",
-    price: 17000,
     perWeek: "6 videos a week",
     features: ["6 videos every week", "Everything in Starter & Growth", "In-depth social media analysis", "Niche & competitor analysis", "Full strategy for your business"],
     description: "6 videos every week, everything in Starter and Growth, plus in-depth social media analysis, niche and competitor analysis and a full strategy for your business.",
@@ -94,6 +91,9 @@ export const PACKAGES = [
 ] as const;
 
 export const AED = (n: number) => `AED ${n.toLocaleString("en-US")}`;
+// The only public price (decision 29 Oct 2026): packages are quoted per business through the
+// "Find your price" form; the entry price stays public so search and AI answers can quote it.
+export const PRICE_FROM = 5000;
 
 export const SERVICE_PAGES = [
   {

@@ -88,6 +88,10 @@ function chipClass(selected: boolean) {
   ].join(" ");
 }
 
+// `cta` keeps the look inside article pages; the utilities carry it on the homepage.
+const BTN = "cta inline-flex items-center justify-center rounded-full bg-accent px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.12em] text-accent-fg transition-opacity hover:opacity-90 disabled:cursor-not-allowed";
+const BTN_GHOST = "cta ghost inline-flex items-center justify-center rounded-full border border-line px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.12em] text-fg transition-colors hover:border-accent hover:text-accent";
+
 const FIELD =
   "w-full rounded-xl border border-line bg-transparent px-4 py-3.5 text-[0.95rem] text-fg outline-none transition-colors placeholder:text-muted/70 focus:border-accent";
 
@@ -170,12 +174,12 @@ export default function PriceFinder() {
         <h3 className="display mt-3 text-3xl md:text-4xl" style={{ margin: "0.75rem 0 0" }}>
           Thanks, {first}.
         </h3>
-        <p style={{ marginTop: "1rem" }}>
+        <p className="text-muted" style={{ marginTop: "1rem" }}>
           Our team gets back to you within 1 working day with a package and a price built for {contact.business.trim() || "your business"}. Want it faster? Message us on WhatsApp now.
         </p>
         <p style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", marginTop: "1.5rem", marginBottom: 0 }}>
-          <a href={whatsappFallback} target="_blank" rel="noopener" className="cta">WhatsApp us</a>
-          <Link href="/#work" className="cta ghost">See our work</Link>
+          <a href={whatsappFallback} target="_blank" rel="noopener" className={BTN}>WhatsApp us</a>
+          <Link href="/#work" className={BTN_GHOST}>See our work</Link>
         </p>
       </div>
     );
@@ -195,7 +199,7 @@ export default function PriceFinder() {
       {!onContact && current && (
         <fieldset key={current.key} className="mt-8 border-0 p-0" style={{ margin: "2rem 0 0", padding: 0 }}>
           <legend className="display text-2xl leading-tight md:text-3xl">{current.question}</legend>
-          {current.help && <p className="text-sm" style={{ marginTop: "0.6rem", marginBottom: 0 }}>{current.help}</p>}
+          {current.help && <p className="text-sm text-muted" style={{ marginTop: "0.6rem", marginBottom: 0 }}>{current.help}</p>}
           <div className="mt-6 grid gap-2.5 sm:grid-cols-2" role={current.multi ? "group" : "radiogroup"}>
             {current.choices.map((c) => {
               const selected = current.multi ? answers.needs.includes(c.value) : answers[current.key] === c.value;
@@ -220,7 +224,7 @@ export default function PriceFinder() {
               ← Back
             </button>
             {(current.multi || canContinue(current)) && (
-              <button type="button" className="cta" disabled={!canContinue(current)} onClick={() => setStep((n) => n + 1)} style={{ opacity: canContinue(current) ? 1 : 0.4 }}>
+              <button type="button" className={BTN} disabled={!canContinue(current)} onClick={() => setStep((n) => n + 1)} style={{ opacity: canContinue(current) ? 1 : 0.4 }}>
                 Next
               </button>
             )}
@@ -231,7 +235,7 @@ export default function PriceFinder() {
       {onContact && (
         <form onSubmit={submit} className="mt-8" noValidate>
           <h3 className="display text-2xl leading-tight md:text-3xl" style={{ margin: 0 }}>Where do we send your price?</h3>
-          <p className="text-sm" style={{ marginTop: "0.6rem", marginBottom: 0 }}>
+          <p className="text-sm text-muted" style={{ marginTop: "0.6rem", marginBottom: 0 }}>
             Our team gets back to you within 1 working day. No newsletters, no spam.
           </p>
 
@@ -271,7 +275,7 @@ export default function PriceFinder() {
 
           {problem && <p role="alert" className="text-sm text-accent" style={{ marginTop: "1rem", marginBottom: 0 }}>{problem}</p>}
           {status === "error" && (
-            <p role="alert" className="text-sm" style={{ marginTop: "1rem", marginBottom: 0 }}>
+            <p role="alert" className="text-sm text-muted" style={{ marginTop: "1rem", marginBottom: 0 }}>
               The form did not go through. Send the same details on <a href={whatsappFallback} target="_blank" rel="noopener">WhatsApp</a> or call {PHONE_E164}.
             </p>
           )}
@@ -280,7 +284,7 @@ export default function PriceFinder() {
             <button type="button" className="text-sm text-muted hover:text-fg" onClick={() => setStep(STEPS.length - 1)}>
               ← Back
             </button>
-            <button type="submit" className="cta" disabled={status === "sending"} style={{ opacity: status === "sending" ? 0.6 : 1 }}>
+            <button type="submit" className={BTN} disabled={status === "sending"} style={{ opacity: status === "sending" ? 0.6 : 1 }}>
               {status === "sending" ? "Sending…" : "Get my price"}
             </button>
           </div>

@@ -3,9 +3,8 @@
 // visibly AND feeds Service/FAQPage schema, so keep it factual. Compliance notes are
 // summaries, not legal advice — each one says so on the page.
 import type { Faq } from "@/lib/faqs";
-import { AED, PACKAGES } from "@/lib/site";
+import { AED, PRICE_FROM } from "@/lib/site";
 
-const [starter, growth, scale] = PACKAGES;
 
 export type Industry = {
   slug: string;
@@ -65,10 +64,10 @@ export const INDUSTRIES: Industry[] = [
       ],
       note: "This is a summary of the rules as we understand them, not legal advice. Permit requirements change; confirm the current DLD and RERA requirements with your brokerage before publishing.",
     },
-    packageAdvice: `Most agents start on Growth (${AED(growth.price)} a month, 3 videos a week): enough to post a listing, a talking-head and an area clip every week. A single agent with a few exclusive listings can start on Starter (${AED(starter.price)}, 6 videos a month). Brokerages with several agents on camera usually need Scale (${AED(scale.price)}).`,
+    packageAdvice: `Most agents start on Growth (3 videos a week): enough to post a listing, a talking-head and an area clip every week. A single agent with a few exclusive listings can start on Starter (6 videos a month). Brokerages with several agents on camera usually need Scale (6 videos a week). Packages start from ${AED(PRICE_FROM)} a month; answer five questions on the pricing page for a price built for your agency.`,
     workSlugs: ["real-estate", "podcast"],
     faqs: [
-      { q: "How much does real estate video marketing cost in Dubai?", a: `With Multify, ${AED(starter.price)} a month for 6 filmed and edited videos (Starter), ${AED(growth.price)} for 3 videos a week (Growth) or ${AED(scale.price)} for 6 videos a week (Scale). Filming, scripts, editing and a monthly report are included in every package; one-off property films are quoted per project.` },
+      { q: "How much does real estate video marketing cost in Dubai?", a: `Multify packages start from ${AED(PRICE_FROM)} a month for 6 filmed and edited videos (Starter); 3 videos a week (Growth) and 6 a week (Scale) are quoted for your agency after five quick questions on the pricing page. Filming, scripts, editing and a monthly report are included in every package; one-off property films are quoted per project.` },
       { q: "Do you need a permit to post property videos in Dubai?", a: "Property advertisements in Dubai, including social media, require a Dubai Land Department advertising permit issued through Trakheesi, and the permit number should appear on the post. Your brokerage normally obtains it per listing; we add it to the caption and on screen where required. Confirm current requirements with DLD and RERA." },
       { q: "Can you film several properties in one day?", a: "Yes. A typical shoot day covers 2–4 properties plus talking-head pieces, planned by location. Properties should be staged before we arrive." },
       { q: "Do you post the videos for us?", a: "On Growth and Scale we upload and schedule to Instagram, TikTok and YouTube Shorts with captions and hashtags. On Starter you receive the finished videos and post them yourself." },
@@ -115,10 +114,10 @@ export const INDUSTRIES: Industry[] = [
       ],
       note: "This is a summary of the rules as we understand them, not legal advice. Confirm permit requirements with the Dubai Film and TV Commission and your own advisor before public-location shoots.",
     },
-    packageAdvice: `Rental companies usually run Growth (${AED(growth.price)} a month): 3 videos a week keeps every car in rotation and leaves room for booking explainers. Smaller fleets start on Starter (${AED(starter.price)}, 6 videos a month). Companies with 30+ cars and daily offers go to Scale (${AED(scale.price)}).`,
+    packageAdvice: `Rental companies usually run Growth: 3 videos a week keeps every car in rotation and leaves room for booking explainers. Smaller fleets start on Starter (6 videos a month). Companies with 30+ cars and daily offers go to Scale (6 videos a week). Packages start from ${AED(PRICE_FROM)} a month; the exact price is quoted after five questions on the pricing page.`,
     workSlugs: ["car-rental", "bmw-club"],
     faqs: [
-      { q: "How much does social media marketing cost for a car rental company in Dubai?", a: `With Multify, ${AED(starter.price)} a month for 6 filmed and edited videos (Starter), ${AED(growth.price)} for 3 videos a week (Growth) or ${AED(scale.price)} for 6 videos a week (Scale). Every package includes filming at your location, scripts, editing and a monthly report.` },
+      { q: "How much does social media marketing cost for a car rental company in Dubai?", a: `Multify packages start from ${AED(PRICE_FROM)} a month for 6 filmed and edited videos (Starter); 3 videos a week (Growth) and 6 a week (Scale) are quoted for your company after five quick questions on the pricing page. Every package includes filming at your location, scripts, editing and a monthly report.` },
       { q: "Do you film driving shots?", a: "Yes, from a chase car with a gimbal, within road rules and only where filming is permitted. Public-location shoots that need a Dubai Film and TV Commission permit are planned in advance." },
       { q: "Can one shoot day cover the whole fleet?", a: "A typical day covers 4–8 cars plus one driving location. Larger fleets are split across two days in the same month." },
       { q: "Do you also run paid ads for car rentals?", a: "Packages cover organic content and management. Boosting and paid campaigns can be added separately, with the ad spend paid by you to the platform." },
@@ -165,10 +164,10 @@ export const INDUSTRIES: Industry[] = [
       ],
       note: "This is a summary of the rules as we understand them, not legal advice. Confirm the current UAE Media Council and platform policies with your venue's licensing advisor before publishing.",
     },
-    packageAdvice: `Venues with weekly events run Growth (${AED(growth.price)} a month): 3 videos a week covers an atmosphere reel, a recap and a promo every week. A restaurant or café without events usually starts on Starter (${AED(starter.price)}, 6 videos a month). Clubs and multi-venue groups go to Scale (${AED(scale.price)}).`,
+    packageAdvice: `Venues with weekly events run Growth: 3 videos a week covers an atmosphere reel, a recap and a promo every week. A restaurant or café without events usually starts on Starter (6 videos a month). Clubs and multi-venue groups go to Scale (6 videos a week). Packages start from ${AED(PRICE_FROM)} a month; the exact price is quoted after five questions on the pricing page.`,
     workSlugs: ["nightclub", "karaoke", "barbershop"],
     faqs: [
-      { q: "How much does social media marketing cost for a restaurant or club in Dubai?", a: `With Multify, ${AED(starter.price)} a month for 6 filmed and edited videos (Starter), ${AED(growth.price)} for 3 videos a week (Growth) or ${AED(scale.price)} for 6 videos a week (Scale), filming at your venue included.` },
+      { q: "How much does social media marketing cost for a restaurant or club in Dubai?", a: `Multify packages start from ${AED(PRICE_FROM)} a month for 6 filmed and edited videos (Starter); 3 videos a week (Growth) and 6 a week (Scale) are quoted for your venue after five quick questions on the pricing page, filming at your venue included.` },
       { q: "Do you film at night and on event nights?", a: "Yes. Venue shoots happen on real nights, usually 9pm–1am, with daytime sessions for food, rooms and staff pieces when needed." },
       { q: "How fast do we get an event recap?", a: "Recaps are delivered within 48–72 hours of the event so they post while the night is still being talked about." },
       { q: "Can you show drinks in the videos?", a: "Alcohol cannot be promoted in advertising in the UAE, so our content focuses on the atmosphere, food, music and events. We follow your licensing advisor's guidance on what can appear on screen." },

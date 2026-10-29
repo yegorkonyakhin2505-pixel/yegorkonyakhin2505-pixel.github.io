@@ -1,23 +1,21 @@
 // src/lib/faqs.ts
 // FAQ text is rendered visibly on the page AND used for FAQPage schema. Never ship one without the other.
-import { AED, BRAND, CONTACT_EMAIL, LEGAL_NAME, LICENCE_NO, PACKAGES, PHONE_DISPLAY } from "@/lib/site";
+import { AED, BRAND, CONTACT_EMAIL, LEGAL_NAME, LICENCE_NO, PHONE_DISPLAY, PRICE_FROM } from "@/lib/site";
 
 export type Faq = { q: string; a: string };
-
-const [starter, growth, scale] = PACKAGES;
 
 export const PRICING_FAQS: Faq[] = [
   {
     q: "How much does social media management cost in Dubai with Multify?",
-    a: `Our monthly packages are ${AED(starter.price)} (Starter, 6 filmed videos a month), ${AED(growth.price)} (Growth, 3 videos a week) and ${AED(scale.price)} (Scale, 6 videos a week). Every package includes filming, scriptwriting, editing and an end-of-month analytics report. AI platform and website projects are quoted per project.`,
+    a: `Packages start from ${AED(PRICE_FROM)} a month. The exact price depends on how many videos a week you want, how many shoot days that takes, whether we post for you and how much strategy sits behind it. Answer five questions on the pricing page and we reply within 1 working day with a package and a price for your business. Every package includes filming, scriptwriting, editing and an end-of-month analytics report. AI platform and website projects are quoted per project.`,
   },
   {
     q: "What is included in the Starter package?",
-    a: `Starter (${AED(starter.price)} a month) includes 6 videos filmed a month by our team, a script written for every video, professional editing and an end-of-month analytics report.`,
+    a: `Starter includes 6 videos filmed a month by our team, a script written for every video, professional editing and an end-of-month analytics report. It is the entry package, from ${AED(PRICE_FROM)} a month.`,
   },
   {
     q: "What is the difference between Growth and Scale?",
-    a: `Growth (${AED(growth.price)}) is 3 videos a week and adds AI-generated content, uploading and scheduling and a monthly strategy call. Scale (${AED(scale.price)}) doubles output to 6 videos a week and adds in-depth social media analysis, niche and competitor analysis and a full strategy for your business.`,
+    a: "Growth is 3 videos a week and adds AI-generated content, uploading and scheduling and a monthly strategy call. Scale doubles output to 6 videos a week and adds in-depth social media analysis, niche and competitor analysis and a full strategy for your business. Both are quoted for your business after the five questions on the pricing page.",
   },
   {
     q: "Is there a long-term contract?",
