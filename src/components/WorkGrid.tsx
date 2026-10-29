@@ -62,7 +62,7 @@ function Tile({ c, i }: { c: Case; i: number }) {
 
   return (
     <div className="work-card group" onMouseEnter={play} onMouseLeave={pause}>
-      <div ref={box} className="relative aspect-[9/16] overflow-hidden rounded-xl bg-card">
+      <div ref={box} className={`relative overflow-hidden rounded-xl bg-card ${c.landscape ? "aspect-video" : "aspect-[9/16]"}`}>
         <div
           className={`absolute inset-0 transition-all duration-500 ease-out group-hover:scale-[1.04] ${
             playing ? "" : "brightness-[.85]"
@@ -152,10 +152,17 @@ export default function WorkGrid() {
       <h2 className="work-heading display mb-10 mt-24 text-5xl md:mb-14 md:mt-32 md:text-[4.5vw]">
         For <span className="text-accent">influencers</span>
       </h2>
-      {/* 5 tiles → one row on desktop */}
+      {/* 3 vertical tiles spread across the row (columns 1, 3, 5), then the 2 horizontal films below */}
       <div className="grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
-        {INFLUENCERS.map((c, i) => (
-          <Tile key={c.slug} c={c} i={i} />
+        {INFLUENCERS.filter((c) => !c.landscape).map((c, i) => (
+          <div key={c.slug} className={i === 1 ? "md:col-start-3" : i === 2 ? "md:col-start-5" : ""}>
+            <Tile c={c} i={i} />
+          </div>
+        ))}
+      </div>
+      <div className="mt-3 grid gap-3 md:mt-4 md:grid-cols-2 md:gap-4">
+        {INFLUENCERS.filter((c) => c.landscape).map((c, i) => (
+          <Tile key={c.slug} c={c} i={i + INFLUENCERS.filter((x) => !x.landscape).length} />
         ))}
       </div>
     </section>

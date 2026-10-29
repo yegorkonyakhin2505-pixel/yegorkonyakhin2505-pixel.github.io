@@ -1,7 +1,8 @@
 // src/lib/work.ts
 // Portfolio tiles. Footage is work by our team; client names stay private and no numbers
 // are shown unless a client has approved them. `description` feeds VideoObject schema.
-export type Case = { title: string; slug: string; tag: string; art: string; description: string };
+// `landscape`: the source film is horizontal (16:9); the tile keeps it that way instead of cropping.
+export type Case = { title: string; slug: string; tag: string; art: string; description: string; landscape?: boolean };
 
 export const BUSINESSES: Case[] = [
   { title: "Barbershops", slug: "barbershop", tag: "Content & Reels", art: "radial-gradient(circle at 70% 20%, color-mix(in oklab, var(--accent) 65%, #fff) 0%, #101012 65%)", description: "Short-form reels for a Dubai barbershop: cuts, fades and the chair-side atmosphere, edited with captions for sound-off viewing." },
@@ -18,8 +19,9 @@ export const BUSINESSES: Case[] = [
 
 export const INFLUENCERS: Case[] = [
   { title: "Gym & Fitness", slug: "inf-gym", tag: "Content System", art: "radial-gradient(circle at 60% 30%, color-mix(in oklab, var(--accent) 60%, #fff) 0%, #0c0c0f 65%)", description: "Content system for a fitness creator in Dubai: gym sessions filmed and cut into a month of posts." },
-  { title: "Cinematic Films", slug: "inf-cinematic", tag: "Signature Edits", art: "linear-gradient(230deg, color-mix(in oklab, var(--accent) 55%, #000) 0%, #08080a 80%)", description: "Cinematic creator film: slow-motion, colour-graded sequences with sound design." },
-  { title: "Creator Montages", slug: "inf-montage", tag: "Fast-Cut Edits", art: "radial-gradient(circle at 25% 75%, color-mix(in oklab, var(--accent) 65%, #000) 0%, #0c0c0f 70%)", description: "Fast-cut montage edit for a creator: beat-matched cuts and captions built for retention." },
   { title: "Behind the Scenes", slug: "inf-backstage", tag: "Production Content", art: "linear-gradient(300deg, color-mix(in oklab, var(--accent) 60%, #000) 0%, #0a0a0d 75%)", description: "Behind-the-scenes production content from a shoot day in Dubai." },
   { title: "Gym Workouts", slug: "inf-workout", tag: "Training Content", art: "radial-gradient(circle at 75% 70%, color-mix(in oklab, var(--accent) 55%, #fff) 0%, #0b0b0e 68%)", description: "Training content for a gym creator: exercise demonstrations filmed and captioned for Reels and Shorts." },
+  // Horizontal films: shown as two wide tiles under the three vertical ones (Yegor, 29 Oct 2026).
+  { title: "Cinematic Films", slug: "inf-cinematic", tag: "Signature Edits", art: "linear-gradient(230deg, color-mix(in oklab, var(--accent) 55%, #000) 0%, #08080a 80%)", description: "Cinematic creator film: slow-motion, colour-graded sequences with sound design.", landscape: true },
+  { title: "Creator Montages", slug: "inf-montage", tag: "Fast-Cut Edits", art: "radial-gradient(circle at 25% 75%, color-mix(in oklab, var(--accent) 65%, #000) 0%, #0c0c0f 70%)", description: "Fast-cut montage edit for a creator: beat-matched cuts and captions built for retention.", landscape: true },
 ];
