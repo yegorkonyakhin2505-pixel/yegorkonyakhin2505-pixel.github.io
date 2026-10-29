@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageShell from "@/components/PageShell";
 import Cta from "@/components/Cta";
-import { BRAND, CLICKCOLLAB_URL, FOUNDERS, FOUNDING_YEAR, LEGAL_NAME, LICENCE_AUTHORITY, LICENCE_NO } from "@/lib/site";
+import { BRAND, CLICKCOLLAB_URL, FOUNDERS, FOUNDING_YEAR, LEGAL_NAME, LICENCE_AUTHORITY, LICENCE_ISSUED, LICENCE_NO } from "@/lib/site";
 
 const PATH = "/about";
 const TITLE = `About ${BRAND} — video and social media marketing agency in Dubai`;
@@ -29,7 +29,7 @@ export default function AboutPage() {
     >
       <h2>The short version</h2>
       <ul>
-        <li><strong>Founded</strong> in Dubai in {FOUNDING_YEAR} by {yegor.name} and {asset.name}.</li>
+        <li><strong>Founded</strong> in {FOUNDING_YEAR} as Amplify Marketing by {yegor.name} and {asset.name}; licensed in Dubai in {LICENCE_ISSUED}.</li>
         <li><strong>Legal entity:</strong> {LEGAL_NAME}, trade licence {LICENCE_NO}, {LICENCE_AUTHORITY}. {BRAND} is the agency&apos;s trading name; the licence is being updated to match.</li>
         <li><strong>What we sell:</strong> monthly content packages (filming, scripts, editing, posting, analytics) from AED 5,000, and AI platforms, websites and SEO/AEO per project.</li>
         <li><strong>Who we work with:</strong> businesses in Dubai that sell face to face: barbershops and salons, clinics, car rental and detailing, restaurants and lounges, real estate agents, gyms, product brands, plus creators and podcasts.</li>
@@ -59,7 +59,7 @@ export default function AboutPage() {
       <p>Dubai, on location: Marina, JBR, Downtown, Business Bay, DIFC, Jumeirah, Al Quoz, Palm Jumeirah, Deira and wherever your business is. Shoots elsewhere in the UAE are arranged per project.</p>
 
       <h2>Previously Amplify Marketing</h2>
-      <p>The agency launched in 2025 as Amplify Marketing and became {BRAND} in October 2026. Same team, same packages, new name. Old links on amplifymarketing.ae redirect here.</p>
+      <p>The agency started in {FOUNDING_YEAR} as Amplify Marketing, was licensed in Dubai in {LICENCE_ISSUED} and became {BRAND} in October 2026. Same team, same packages, new name. Old links on amplifymarketing.ae redirect here.</p>
 
       <p>See <Link href="/pricing">pricing</Link>, the <Link href="/services/social-media-marketing-dubai">social media</Link>, <Link href="/services/video-production-dubai">video production</Link> and <Link href="/services/ai-platforms-dubai">AI platforms</Link> pages, or <Link href="/contact">contact us</Link>.</p>
       <Cta />

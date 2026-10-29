@@ -9,7 +9,9 @@ export const BRAND_FULL = "Multify Marketing";
 export const LEGAL_NAME = "Amplify Marketing Management";
 export const LICENCE_NO = "1553366";
 export const LICENCE_AUTHORITY = "Department of Economy and Tourism, Dubai";
-export const FOUNDING_YEAR = "2025";
+// Yegor started the agency in 2023 as Amplify Marketing; the DET licence followed on 17 Sep 2025.
+export const FOUNDING_YEAR = "2023";
+export const LICENCE_ISSUED = "September 2025";
 
 export const SITE_URL = "https://multify.ae";
 
@@ -19,6 +21,8 @@ export const MEDIA_VERSION = "20261027c";
 export const media = (path: string) => `${path}?v=${MEDIA_VERSION}`;
 export const SITE_HOST = "multify.ae";
 export const PORTAL_URL = "https://app.multify.ae";
+// "Find your price" form posts here (portal route app/api/inquiries: stores the lead, pings Telegram).
+export const INQUIRY_API = `${PORTAL_URL}/api/inquiries`;
 
 export const CONTACT_EMAIL = "hello@multify.ae";
 export const PHONE_DISPLAY = "+971 52 452 2978";
