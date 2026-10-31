@@ -152,18 +152,27 @@ export default function WorkGrid() {
       <h2 className="work-heading display mb-10 mt-24 text-5xl md:mb-14 md:mt-32 md:text-[4.5vw]">
         For <span className="text-accent">influencers</span>
       </h2>
-      {/* 3 vertical tiles spread across the row (columns 1, 3, 5), then the 2 horizontal films below */}
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
-        {INFLUENCERS.filter((c) => !c.landscape).map((c, i) => (
-          <div key={c.slug} className={i === 1 ? "md:col-start-3" : i === 2 ? "md:col-start-5" : ""}>
-            <Tile c={c} i={i} />
-          </div>
-        ))}
-      </div>
-      <div className="mt-3 grid gap-3 md:mt-4 md:grid-cols-2 md:gap-4">
-        {INFLUENCERS.filter((c) => c.landscape).map((c, i) => (
-          <Tile key={c.slug} c={c} i={i + INFLUENCERS.filter((x) => !x.landscape).length} />
-        ))}
+      {/* Desktop: one tight block. 3 vertical tiles on top, the 2 horizontal films below, both rows the same
+          total width. --tw (vertical tile width) also shrinks with the viewport height so the whole block
+          fits on one screen. Mobile keeps the plain grids. */}
+      <div
+        className="md:mx-auto md:w-fit"
+        style={{ "--tw": "clamp(140px, min(17vw, calc((100vh - 290px) / 2.62)), 260px)" } as React.CSSProperties}
+      >
+        <div className="grid grid-cols-2 gap-3 md:flex md:gap-4">
+          {INFLUENCERS.filter((c) => !c.landscape).map((c, i) => (
+            <div key={c.slug} className="md:w-[var(--tw)]">
+              <Tile c={c} i={i} />
+            </div>
+          ))}
+        </div>
+        <div className="mt-3 grid gap-3 md:mt-4 md:flex md:gap-4">
+          {INFLUENCERS.filter((c) => c.landscape).map((c, i) => (
+            <div key={c.slug} className="md:w-[calc((var(--tw)*3+16px)/2)]">
+              <Tile c={c} i={i + INFLUENCERS.filter((x) => !x.landscape).length} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

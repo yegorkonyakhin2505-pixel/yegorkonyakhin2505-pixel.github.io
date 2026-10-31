@@ -6,7 +6,7 @@ export const BRAND = "Multify";
 export const BRAND_FULL = "Multify Marketing";
 // The DET licence still carries the previous trade name until the amendment is filed.
 // Keep this accurate: it is printed in the footer, on invoices and in schema `legalName`.
-export const LEGAL_NAME = "Amplify Marketing Management";
+export const LEGAL_NAME = "Multify Marketing";
 export const LICENCE_NO = "1553366";
 export const LICENCE_AUTHORITY = "Department of Economy and Tourism, Dubai";
 // Yegor started the agency in 2023 as Amplify Marketing; the DET licence followed on 17 Sep 2025.

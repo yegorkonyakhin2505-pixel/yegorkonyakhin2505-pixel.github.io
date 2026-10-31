@@ -30,7 +30,7 @@ export default function AboutPage() {
       <h2>The short version</h2>
       <ul>
         <li><strong>Founded</strong> in {FOUNDING_YEAR} as Amplify Marketing by {yegor.name} and {asset.name}; licensed in Dubai in {LICENCE_ISSUED}.</li>
-        <li><strong>Legal entity:</strong> {LEGAL_NAME}, trade licence {LICENCE_NO}, {LICENCE_AUTHORITY}. {BRAND} is the agency&apos;s trading name; the licence is being updated to match.</li>
+        <li><strong>Legal entity:</strong> {LEGAL_NAME}, trade licence {LICENCE_NO}, {LICENCE_AUTHORITY}. The licence trade name is MULTIFY MARKETING.</li>
         <li><strong>What we sell:</strong> monthly content packages (filming, scripts, editing, posting, analytics) from AED 5,000, and AI platforms, websites and SEO/AEO per project.</li>
         <li><strong>Who we work with:</strong> businesses in Dubai that sell face to face: barbershops and salons, clinics, car rental and detailing, restaurants and lounges, real estate agents, gyms, product brands, plus creators and podcasts.</li>
         <li><strong>Languages:</strong> English and Russian.</li>
