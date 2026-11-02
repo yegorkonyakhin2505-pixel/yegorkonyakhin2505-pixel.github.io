@@ -6,7 +6,10 @@ const pill =
 
 export default function Nav() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 md:px-10">
+    <header
+      className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 md:px-10"
+      style={{ background: "linear-gradient(to bottom, var(--bg) 0%, color-mix(in oklab, var(--bg) 85%, transparent) 55%, transparent 100%)" }}
+    >
       <Link href="/" className="display text-lg tracking-tight md:text-xl" aria-label={`${BRAND} home`}>
         {BRAND}<span className="text-accent">.</span>
       </Link>

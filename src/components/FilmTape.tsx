@@ -7,8 +7,8 @@ import { media } from "@/lib/site";
 /**
  * Infinite "video tape" hero background built from the team's real footage —
  * two rows of small muted clips (compressed 8s loops in /media/tape/) drifting
- * in opposite directions. On small screens the clips render as gradient frames
- * to keep scrolling smooth; on desktop the clips are attached after the page is idle.
+ * in opposite directions. Every frame shows a small poster JPG (160x240, ~4 KB) so phones see
+ * real footage stills; on desktop the clips are attached on top after the page is idle.
  */
 
 const ROW_A = ["barbershop", "bmw-club", "podcast", "car-rental", "clothing", "nightclub", "esports", "karaoke", "laptop", "phone", "real-estate"];
@@ -23,9 +23,19 @@ function TapeSquare({ slug, n, playVideo }: { slug: string; n: number; playVideo
         background: `linear-gradient(${135 + n * 40}deg, color-mix(in oklab, var(--accent) ${25 + (n % 5) * 12}%, #0a0a0c), #0a0a0c 85%)`,
       }}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element -- static export, tiny asset */}
+      <img
+        src={media(`/media/tape/${slug}-poster.jpg`)}
+        alt=""
+        width={160}
+        height={240}
+        loading={n < 4 ? "eager" : "lazy"}
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
       {playVideo && ok && (
         <video
-          className="h-full w-full object-cover"
+          className="relative h-full w-full object-cover"
           src={media(`/media/tape/${slug}.mp4`)}
           autoPlay
           muted

@@ -136,7 +136,7 @@ export default function WorkGrid() {
 
   return (
     <section id="work" ref={root} className="mx-auto max-w-6xl px-6 py-28 md:py-36">
-      <h2 className="work-heading display mb-10 text-5xl md:mb-14 md:text-[4.5vw]">
+      <h2 className="work-heading display mb-10 text-[10vw] md:mb-14 md:text-[4.5vw]">
         For <span className="text-accent">businesses</span>
       </h2>
       <p className="-mt-6 mb-10 max-w-2xl text-sm leading-relaxed text-muted md:mb-14">
@@ -149,7 +149,7 @@ export default function WorkGrid() {
         ))}
       </div>
 
-      <h2 className="work-heading display mb-10 mt-24 text-5xl md:mb-14 md:mt-32 md:text-[4.5vw]">
+      <h2 className="work-heading display mb-10 mt-24 text-[10vw] md:mb-14 md:mt-32 md:text-[4.5vw]">
         For <span className="text-accent">influencers</span>
       </h2>
       {/* Desktop: one tight block. 3 vertical tiles on top, the 2 horizontal films below, both rows the same
@@ -159,14 +159,14 @@ export default function WorkGrid() {
         className="md:mx-auto md:w-fit"
         style={{ "--tw": "clamp(140px, min(17vw, calc((100vh - 290px) / 2.62)), 260px)" } as React.CSSProperties}
       >
-        <div className="grid grid-cols-2 gap-3 md:flex md:gap-4">
+        <div className="grid grid-cols-3 gap-2 md:flex md:gap-4">
           {INFLUENCERS.filter((c) => !c.landscape).map((c, i) => (
             <div key={c.slug} className="md:w-[var(--tw)]">
               <Tile c={c} i={i} />
             </div>
           ))}
         </div>
-        <div className="mt-3 grid gap-3 md:mt-4 md:flex md:gap-4">
+        <div className="mt-2 grid grid-cols-2 gap-2 md:mt-4 md:flex md:gap-4">
           {INFLUENCERS.filter((c) => c.landscape).map((c, i) => (
             <div key={c.slug} className="md:w-[calc((var(--tw)*3+16px)/2)]">
               <Tile c={c} i={i + INFLUENCERS.filter((x) => !x.landscape).length} />
