@@ -30,7 +30,7 @@ export const PHONE_E164 = "+971524522978";
 export const WHATSAPP_URL = `https://wa.me/${PHONE_E164.replace("+", "")}`;
 
 // Fill in when the profiles exist. Empty => omitted everywhere (no placeholder links).
-export const INSTAGRAM_URL = "";
+export const INSTAGRAM_URL = "https://www.instagram.com/multify.ae";
 export const LINKEDIN_URL = "";
 export const TIKTOK_URL = "";
 export const SOCIAL_PROFILES = [INSTAGRAM_URL, LINKEDIN_URL, TIKTOK_URL].filter(Boolean);
