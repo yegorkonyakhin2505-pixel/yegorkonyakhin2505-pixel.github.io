@@ -7,7 +7,7 @@ import { AI_FAQS } from "@/lib/faqs";
 import { buildServicePage } from "@/lib/schema";
 import { BRAND, CLICKCOLLAB_URL, SERVICE_PAGES, SITE_HOST } from "@/lib/site";
 
-const page = SERVICE_PAGES[2];
+const page = SERVICE_PAGES[3];
 const PATH = page.path;
 const TITLE = "AI Platforms, Websites and SEO/AEO for Dubai Businesses";
 const DESC = `${BRAND} builds AI agents and automations, fast business websites, company email and SEO/AEO for Dubai businesses. Quoted per project, handed over in full.`;

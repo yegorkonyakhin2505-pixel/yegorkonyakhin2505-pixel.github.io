@@ -113,6 +113,14 @@ export const SERVICE_PAGES = [
     description: "Concepts, scripts, shoot days on location across Dubai and edits built for Reels, TikTok and YouTube Shorts.",
   },
   {
+    slug: "paid-ads-dubai",
+    path: "/services/paid-ads-dubai",
+    name: "Meta and Google Ads",
+    short: "Meta & Google Ads",
+    title: "Meta and Google Ads Management in Dubai",
+    description: "Instagram, Facebook and Google Ads campaigns planned, built, run and reported for Dubai businesses, with ad creative filmed by our own team.",
+  },
+  {
     slug: "ai-platforms-dubai",
     path: "/services/ai-platforms-dubai",
     name: "AI Platforms, Websites and SEO",

@@ -103,7 +103,7 @@ export default function Hero() {
           See our work <span aria-hidden>↓</span>
         </a>
         <p className="hero-fade max-w-sm text-sm leading-relaxed text-muted">
-          {BRAND} is a Dubai video and social media marketing agency. We film, script, edit, post and report for UAE businesses and creators, from AED 5,000 a month.
+          {BRAND} is a Dubai video and social media marketing agency. We film, script, edit, post, run ads and report for UAE businesses and creators, from AED 5,000 a month.
         </p>
       </div>
       <p className="hero-fade absolute bottom-10 left-6 text-xs uppercase tracking-[0.3em] text-muted md:left-10">

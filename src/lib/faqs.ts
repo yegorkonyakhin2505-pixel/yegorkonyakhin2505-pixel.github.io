@@ -104,6 +104,29 @@ export const VIDEO_FAQS: Faq[] = [
   },
 ];
 
+export const ADS_FAQS: Faq[] = [
+  {
+    q: "Which ads do you run?",
+    a: "Meta ads on Instagram and Facebook, and Google Ads on Search and YouTube. We pick the mix for what you sell: Instagram for walk-ins and bookings, Google Search for people already looking for your service in Dubai.",
+  },
+  {
+    q: "Who pays the ad spend?",
+    a: "You do, directly to Meta or Google, from an ad account in your business name. Our fee is for planning, building, running and reporting the campaigns, so you always see exactly where every dirham goes.",
+  },
+  {
+    q: "Where do the ads come from?",
+    a: "From your own shoot days. We cut ad versions of the videos we film at your business, with hooks and captions written for ads, so the creative looks like you and not like stock footage.",
+  },
+  {
+    q: "Where do the leads go?",
+    a: "Into your client portal. Enquiries from ad lead forms and messages land in your own leads board, so you can see which ads bring people in and follow every lead up.",
+  },
+  {
+    q: "How much does it cost?",
+    a: "Ads management is quoted per business, depending on the platforms, the number of campaigns and the budget. Answer five questions on the pricing page and we reply within 1 working day.",
+  },
+];
+
 export const AI_FAQS: Faq[] = [
   {
     q: "What kind of AI platforms do you build?",

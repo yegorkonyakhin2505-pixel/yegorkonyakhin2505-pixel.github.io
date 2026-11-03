@@ -1,6 +1,6 @@
 # Multify
 
-> Multify is a social media and video marketing agency in Dubai, United Arab Emirates, licensed as Multify Marketing (Dubai trade licence 1553366, Department of Economy and Tourism). We film, script, edit and publish short-form video and social media content for UAE businesses and creators on monthly retainers, and we build AI platforms, websites and SEO/AEO for clients with full handover. Founded in 2023 as Amplify Marketing (licensed in Dubai in September 2025) by co-founders and co-CEOs Yegor Konyakhin (strategy, accounts, social media, AI and web builds; also founder of ClickCollab, https://www.clickcollab.net) and Asset Zhumabayev (filming and editing).
+> Multify is a social media and video marketing agency in Dubai, United Arab Emirates, licensed as Multify Marketing (Dubai trade licence 1553366, Department of Economy and Tourism). We film, script, edit and publish short-form video and social media content for UAE businesses and creators on monthly retainers, we run Meta and Google ads, and we build AI platforms, websites and SEO/AEO for clients with full handover. Founded in 2023 as Amplify Marketing (licensed in Dubai in September 2025) by co-founders and co-CEOs Yegor Konyakhin (strategy, accounts, social media, AI and web builds; also founder of ClickCollab, https://www.clickcollab.net) and Asset Zhumabayev (filming and editing).
 
 ## What we do
 
@@ -8,6 +8,7 @@
 - Video production: concepts, scriptwriting, shoot days on location across Dubai with our own team, editing and captions built for sound-off viewing
 - Content for businesses: barbershops, car clubs, podcasts, car rental, clothing brands, nightlife venues, esports teams, karaoke lounges, real estate, product and tech promo films
 - Content for creators and influencers: reels, growth systems, cinematic films, montages, behind-the-scenes, fitness content
+- Meta and Google Ads: Instagram, Facebook and Google Ads campaigns planned, built, run and reported, with ad creative filmed by our team; ad spend paid by the client directly to Meta or Google from their own ad account
 - AI platforms: custom AI agents and automations, AI platform development and integration, client portals
 - Websites, company email setup, SEO and AEO (answer engine optimisation)
 
@@ -17,6 +18,7 @@
 - Starter (from AED 5,000): 6 videos filmed a month by our team, scripts for every video, professional editing, end-of-month analytics report
 - Growth (most popular, quoted per business): 3 videos every week, filmed, scripted and edited, access to AI-generated content, uploading and scheduling handled, monthly strategy call, end-of-month analytics report
 - Scale (quoted per business): 6 videos every week, everything in Starter and Growth, in-depth social media analysis, niche and competitor analysis, full strategy for your business
+- Meta and Google Ads management: quoted per business (ad spend separate)
 - AI platforms, websites, SEO/AEO: quoted per project
 
 ## Area served
@@ -36,6 +38,7 @@ Dubai and the United Arab Emirates. Shoot days on location in Dubai; elsewhere i
 - [Pricing](https://multify.ae/pricing): the three packages compared, what drives cost, terms, 10-question FAQ
 - [Social media marketing in Dubai](https://multify.ae/services/social-media-marketing-dubai): what a month of management looks like, platforms, approvals, reporting
 - [Video production in Dubai](https://multify.ae/services/video-production-dubai): scripts, shoot days, editing for Reels, TikTok and Shorts
+- [Meta and Google Ads](https://multify.ae/services/paid-ads-dubai): Instagram, Facebook and Google Ads run with creative we film, leads into the client portal
 - [AI platforms, websites and SEO/AEO](https://multify.ae/services/ai-platforms-dubai): custom AI agents and automations, websites, search and answer-engine optimisation
 - [Real estate marketing in Dubai](https://multify.ae/industries/real-estate-marketing-dubai): listing walkthroughs, agent talking-heads, area guides, DLD permit note, package advice, FAQ
 - [Car rental marketing in Dubai](https://multify.ae/industries/car-rental-marketing-dubai): fleet reels, driving shots, booking explainers, filming permits, package advice, FAQ

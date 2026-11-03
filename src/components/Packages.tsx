@@ -80,6 +80,10 @@ export default function Packages() {
                   <span className="text-sm text-muted">{p.perWeek}</span>
                 </li>
               ))}
+              <li className="flex items-baseline justify-between gap-4 border-b border-line py-3.5">
+                <span className="display text-2xl">Meta &amp; Google Ads</span>
+                <span className="text-sm text-muted">quoted per business</span>
+              </li>
               <li className="flex items-baseline justify-between gap-4 py-3.5">
                 <span className="display text-2xl">AI platforms</span>
                 <span className="text-sm text-muted">quoted per project</span>

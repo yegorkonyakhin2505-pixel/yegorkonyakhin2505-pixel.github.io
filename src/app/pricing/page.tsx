@@ -84,7 +84,7 @@ export default function PricingPage() {
 
       <h2>What is not in a package</h2>
       <ul>
-        <li>Ad spend. If we boost posts or run paid campaigns for you, the media budget is paid by you to Meta, TikTok or Google directly.</li>
+        <li>Ad spend. When we run <Link href="/services/paid-ads-dubai">Meta and Google ads</Link> for you, the media budget is paid by you to Meta or Google directly, from your own ad account. Ads management is quoted per business.</li>
         <li>Long-form productions such as event films, podcast series and brand films. Quoted per project.</li>
         <li>Shoot days outside Dubai. Arranged per project.</li>
         <li>AI platforms, websites and SEO/AEO work. Quoted per project, see <Link href="/services/ai-platforms-dubai">AI platforms and websites</Link>.</li>

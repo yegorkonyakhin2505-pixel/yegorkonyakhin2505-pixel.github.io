@@ -5,6 +5,7 @@ const ITEMS = [
   "Social Media Management",
   "Posting & Scheduling",
   "Monthly Analytics",
+  "Meta & Google Ads",
   "AI Platform Integration",
 ];
 

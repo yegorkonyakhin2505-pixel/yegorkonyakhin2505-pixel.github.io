@@ -40,6 +40,14 @@ const SERVICES = [
   },
   {
     num: "05",
+    title: "Meta & Google Ads",
+    desc: "Campaigns built, run and reported, with creative we film",
+    about:
+      "We run your Instagram, Facebook and Google ads with the videos we already film for you, so the creative looks like your business, not like stock. Campaigns are set up in your own ad account, leads go straight into your client portal, and you see every dirham of spend and every result.",
+    includes: ["Campaign strategy & audiences", "Ad creative from your shoot days", "Meta Ads (Instagram & Facebook)", "Google Ads (Search & YouTube)", "Lead forms into your CRM", "Weekly optimisation & monthly report"],
+  },
+  {
+    num: "06",
     title: "AI Platform Development & Integration",
     desc: "AI systems, websites and automations — built and handed over",
     about:
