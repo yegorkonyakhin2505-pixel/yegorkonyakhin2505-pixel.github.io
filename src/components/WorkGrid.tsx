@@ -140,10 +140,10 @@ export default function WorkGrid() {
         For <span className="text-accent">businesses</span>
       </h2>
       <p className="-mt-6 mb-10 max-w-2xl text-sm leading-relaxed text-muted md:mb-14">
-        Work by our team across Dubai: barbershops, car clubs, podcasts, car rental, clothing, nightlife, esports, karaoke, real estate and product films.
+        Work by our team across Dubai: car clubs, podcasts, car rental, clothing, nightlife, esports, karaoke and product films.
       </p>
-      {/* 10 tiles → always two even rows of 5 on desktop */}
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
+      {/* 8 tiles → two even rows of 4 on desktop */}
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
         {BUSINESSES.map((c, i) => (
           <Tile key={c.slug} c={c} i={i} />
         ))}

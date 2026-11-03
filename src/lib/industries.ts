@@ -65,7 +65,7 @@ export const INDUSTRIES: Industry[] = [
       note: "This is a summary of the rules as we understand them, not legal advice. Permit requirements change; confirm the current DLD and RERA requirements with your brokerage before publishing.",
     },
     packageAdvice: `Most agents start on Growth (3 videos a week): enough to post a listing, a talking-head and an area clip every week. A single agent with a few exclusive listings can start on Starter (6 videos a month). Brokerages with several agents on camera usually need Scale (6 videos a week). Packages start from ${AED(PRICE_FROM)} a month; answer five questions on the pricing page for a price built for your agency.`,
-    workSlugs: ["real-estate", "podcast"],
+    workSlugs: ["podcast", "car-rental"],
     faqs: [
       { q: "How much does real estate video marketing cost in Dubai?", a: `Multify packages start from ${AED(PRICE_FROM)} a month for 6 filmed and edited videos (Starter); 3 videos a week (Growth) and 6 a week (Scale) are quoted for your agency after five quick questions on the pricing page. Filming, scripts, editing and a monthly report are included in every package; one-off property films are quoted per project.` },
       { q: "Do you need a permit to post property videos in Dubai?", a: "Property advertisements in Dubai, including social media, require a Dubai Land Department advertising permit issued through Trakheesi, and the permit number should appear on the post. Your brokerage normally obtains it per listing; we add it to the caption and on screen where required. Confirm current requirements with DLD and RERA." },
@@ -165,7 +165,7 @@ export const INDUSTRIES: Industry[] = [
       note: "This is a summary of the rules as we understand them, not legal advice. Confirm the current UAE Media Council and platform policies with your venue's licensing advisor before publishing.",
     },
     packageAdvice: `Venues with weekly events run Growth: 3 videos a week covers an atmosphere reel, a recap and a promo every week. A restaurant or café without events usually starts on Starter (6 videos a month). Clubs and multi-venue groups go to Scale (6 videos a week). Packages start from ${AED(PRICE_FROM)} a month; the exact price is quoted after five questions on the pricing page.`,
-    workSlugs: ["nightclub", "karaoke", "barbershop"],
+    workSlugs: ["nightclub", "karaoke"],
     faqs: [
       { q: "How much does social media marketing cost for a restaurant or club in Dubai?", a: `Multify packages start from ${AED(PRICE_FROM)} a month for 6 filmed and edited videos (Starter); 3 videos a week (Growth) and 6 a week (Scale) are quoted for your venue after five quick questions on the pricing page, filming at your venue included.` },
       { q: "Do you film at night and on event nights?", a: "Yes. Venue shoots happen on real nights, usually 9pm–1am, with daytime sessions for food, rooms and staff pieces when needed." },

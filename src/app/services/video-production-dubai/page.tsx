@@ -40,7 +40,7 @@ export default function VideoPage() {
         <li><strong>Podcast clips:</strong> multi-camera recording cut into vertical highlights with captions.</li>
         <li><strong>Creator content:</strong> fitness, lifestyle, cinematic and montage edits for influencers.</li>
       </ul>
-      <p>Examples of all of these are on the <Link href="/#work">work section</Link> of the homepage: barbershops, a BMW car club, podcasts, car rental, a clothing brand, nightlife, esports, a karaoke lounge, real estate and product films.</p>
+      <p>Examples of all of these are on the <Link href="/#work">work section</Link> of the homepage: a BMW car club, podcasts, car rental, a clothing brand, nightlife, esports, a karaoke lounge and product films.</p>
 
       <h2>Scripts and hooks</h2>
       <p>Every video starts as a written script, approved by you before the shoot. The hook is the first line on screen and in the caption, and it is written to answer one question the viewer already has: how much, how long, what happens, is it for me. One idea per video, a clear next step at the end. This is the part most agencies skip; it is the part that decides whether anyone watches past two seconds.</p>

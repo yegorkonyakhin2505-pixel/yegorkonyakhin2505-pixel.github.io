@@ -11,7 +11,7 @@ import { media } from "@/lib/site";
  * real footage stills; on desktop the clips are attached on top after the page is idle.
  */
 
-const ROW_A = ["barbershop", "bmw-club", "podcast", "car-rental", "clothing", "nightclub", "esports", "karaoke", "laptop", "phone", "real-estate"];
+const ROW_A = ["bmw-club", "podcast", "car-rental", "clothing", "nightclub", "esports", "karaoke", "laptop", "phone"];
 const ROW_B = ["inf-gym", "inf-cinematic", "inf-montage", "inf-backstage", "inf-workout", "img-1248", "img-3038", "img-6880", "img-8397"];
 
 function TapeSquare({ slug, n, playVideo }: { slug: string; n: number; playVideo: boolean }) {
